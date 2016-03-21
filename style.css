@@ -211,6 +211,11 @@ th, td {
     border: 1px solid #c3c3c3;
     background: #fff;
 }
+.today:hover,
+.today:focus {
+    box-shadow: inset 0px 0px 2px #c3c3c3;
+    cursor: pointer;
+}
 
 /** INDEX.HTML **************/
 #landing hgroup {
