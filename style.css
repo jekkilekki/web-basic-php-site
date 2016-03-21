@@ -113,10 +113,10 @@ nav li {
 	width: 1000px;
 	background-color: white;
 	box-shadow: 2px 2px 5px silver;
-	margin: 0 auto;
 	padding: 40px;
 	box-sizing: border-box;
 	z-index: 1;
+    margin: 2.5em auto 5em;
 }
 footer {
 	background: #404040;
@@ -203,11 +203,13 @@ tbody {
 tr {
 	
 }
-th {
-	
+th, td {
+	text-align: center;
+    width: 10%;
 }
-td {
-	
+.today {
+    border: 1px solid #c3c3c3;
+    background: #fff;
 }
 
 /** INDEX.HTML **************/

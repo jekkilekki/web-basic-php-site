@@ -26,7 +26,7 @@ $monthname = strtolower( $monthname );
 			<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 			<!-- This is the only part of the page you need to rewrite in every file -->
 			<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-			<section id="landing" style="background: url(img/bg_<?= $monthlyImg; ?>.jpg);">
+			<section id="landing" style="background: url('<?= $siteroot; ?>/img/<?= $monthname; ?>-hero.jpg');">
 				<hgroup>
 					<h1 id="page-title">GPA Computer Classes</h1> <!-- Enter a page title -->
 					<h2 id="page-subtitle">Learn Computer Basics in 3 classes</h2> <!-- Enter a page subtitle -->
