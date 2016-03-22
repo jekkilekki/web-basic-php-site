@@ -188,8 +188,21 @@ footer nav li a:hover {
 .classes {
 	
 }
-.calendar {
-	
+.calendar-page h2 {
+    text-align: center;
+    margin: 2em 0 0.5em 0;
+    font-size: 2em;
+}
+.calendar-page table {
+	width: 70%;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.calendar-page th,
+.calendar-page td {
+    padding: 1em;
+    border: 1px solid #efefef;
 }
 table {
 	

@@ -2,6 +2,8 @@
 // $siteroot points to the dev folder - Reset to empty string on live site.
 $siteroot = "/comp-a"; 
 // date_default_timezone_set('Asia/Seoul'); if need to set the timezone
+
+include_once './includes/functions.php';
 ?>
 
 <header>
