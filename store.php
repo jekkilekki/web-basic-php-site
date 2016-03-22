@@ -5,6 +5,7 @@
 		<link href="style.css" rel="stylesheet" /> <!-- CSS Link goes here -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<title>GPA Computer Classes</title> <!-- Change the page title here -->
+        <script src="js/cart.js"></script>
 	</head>
 	<body>
 
@@ -27,7 +28,7 @@
 							Jeonju University campus in Jeonju, South Korea. Click this
 							link to find out more about me and what I'm up to.
 						</p> <!-- Write some text to introduce your About page -->
-						<a href="about.html">$</a> <!-- Add a link to your About page -->
+						<a href="about.html" id="shop-tesla-s">$</a> <!-- Add a link to your About page -->
 					</div>
 
 					<div class="third">
@@ -39,7 +40,7 @@
 							PPTs, and so on. Click here if you want to see what my high 
 							school students are learning, or if you want to learn too.
 						</p> <!-- Write some text to introduce your About page -->
-						<a href="blog.html">$</a> <!-- Add a link to your Blog page -->
+						<a href="blog.html" id="shop-tesla-3">$</a> <!-- Add a link to your Blog page -->
 					</div>
 
 					<div class="third">
@@ -51,7 +52,7 @@
 							consultation, design, or development work. I'm active in the 
 							WordPress community and love to build websites!~
 						</p> <!-- Write some text to introduce your About page -->
-						<a href="contact.html">$</a> <!-- Add a link to your Contact page -->
+						<a href="contact.html" id="shop-tesla-x">$</a> <!-- Add a link to your Contact page -->
 					</div>
 					
 					<div class="clear"></div>

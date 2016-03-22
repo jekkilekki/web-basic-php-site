@@ -188,10 +188,19 @@ footer nav li a:hover {
 .classes {
 	
 }
+.calendar-page #landing {
+    margin-top: 0;
+}
 .calendar-page h2 {
     text-align: center;
     margin: 2em 0 0.5em 0;
     font-size: 2em;
+}
+.calendar-page #page-title {
+    margin-bottom: 0!important;
+}
+.calendar-page #page-subtitle {
+    margin-top: 0;
 }
 .calendar-page table {
 	width: 70%;
@@ -202,7 +211,11 @@ footer nav li a:hover {
 .calendar-page th,
 .calendar-page td {
     padding: 1em;
-    border: 1px solid #efefef;
+    border: 1px solid #eaeaea;
+}
+.calendar-page .today {
+    border-color: #e1e1e1;
+    background: #efefef;
 }
 table {
 	
@@ -245,6 +258,7 @@ hgroup #page-title {
 	font-size: 64px;
 	line-height: 64px;
 	margin-bottom: 20px;
+    background: transparent!important;
 }
 hgroup #page-subtitle {
 	font-size: 32px;
@@ -288,6 +302,9 @@ hgroup #page-subtitle {
 	letter-spacing: 2px;
 	text-decoration: none;
 	color: #404040;
+}
+.cart .sns {
+    margin: 0;
 }
 footer .sns {
 	padding: 0rem 0 1rem;
