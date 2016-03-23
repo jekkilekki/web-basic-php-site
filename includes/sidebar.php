@@ -3,7 +3,8 @@
     <div class="widget cart">
         <!-- This is where the shopping cart goes. Dynamic updates with JS? -->
         <h2>Shopping Cart</h2>
-        <table>
+        <form action="cart.php" method="POST">
+        <table id="cart-table">
             <thead>
                 <tr>
                     <th>Item</th>
@@ -13,32 +14,33 @@
             </thead>
             <tbody>
                 <tr id="cart-tesla-s">
-                    <td class="item">Model S</td>
-                    <td class="qty">1</td>
-                    <td class="price">$85K</td>
+                    <td id="item-s" class="item" name="item_Model_S">Model S</td>
+                    <td><input type="number" name="qty_Model_S" id="qty-s" class="qty" value="1"></td>
+                    <td><input type="text" name="price_Model_S" id="price-s" class="price" value="$85K" readonly></td>
                 </tr>
                 <tr id="cart-tesla-3">
-                    <td class="item">Model 3</td>
-                    <td class="qty">5</td>
-                    <td class="price">$35K</td>
+                    <td id="item-3" class="item" name="item_Model_S">Model 3</td>
+                    <td><input type="number" name="qty_Model_3" id="qty-3" class="qty" value="5"></td>
+                    <td><input type="text" name="price_Model_3" id="price-s" class="price" value="$35K" readonly></td>
                 </tr>
                 <tr id="cart-tesla-x">
-                    <td class="item">Model X</td>
-                    <td class="qty">2</td>
-                    <td class="price">$125K</td>
+                    <td id="item-x" class="item" name="item_Model_X">Model X</td>
+                    <td><input type="number" name="qty_Model_X" id="qty-x" class="qty" value="2"></td>
+                    <td><input type="text" name="price_Model_X" id="price-x" class="price" value="$125K" readonly></td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr class="totals">
-                    <td class="total-items">Total</td>
-                    <td class="total-qty">8</td>
-                    <td class="total-price">$245K</td>
+                    <td id="total-items"><strong>Total</strong></td>
+                    <td>8</td>
+                    <td>$245K</td>
                 </tr>
             </tfoot>
         </table>
-        <ul class="sns">
-            <li><a href="cart.php">Go to Cart</a></li>
-        </ul>
+        <div class="sns">
+            <input type="submit" name="cart" class="btn" id="go-to-cart" value="Go to Cart">
+        </div>
+        </form>
     </div>
     <?php endif; ?>
     

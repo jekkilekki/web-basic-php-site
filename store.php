@@ -5,7 +5,7 @@
 		<link href="style.css" rel="stylesheet" /> <!-- CSS Link goes here -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<title>GPA Computer Classes</title> <!-- Change the page title here -->
-        <script src="js/cart.js"></script>
+        <script type="text/javascript" src="js/cart.js"></script>
 	</head>
 	<body>
 
@@ -21,38 +21,38 @@
 				<div id="products">
 					<div class="third">
 						<div class="third-img">
-							<img src="img/computers-101.jpg" /> <!-- Use an image from your About page -->
+							<img src="img/tesla-s.jpeg" /> <!-- Use an image from your About page -->
 						</div>
 						<h3>Tesla Model S</h3>
 						<p>I'm a Computer Science teacher at GPA high school on the 
 							Jeonju University campus in Jeonju, South Korea. Click this
 							link to find out more about me and what I'm up to.
 						</p> <!-- Write some text to introduce your About page -->
-						<a href="about.html" id="shop-tesla-s">$</a> <!-- Add a link to your About page -->
+						<a href="#" id="shop-tesla-s">$</a> <!-- Add a link to your About page -->
 					</div>
 
 					<div class="third">
 						<div class="third-img">
-							<img src="img/web-code.jpg" /> <!-- Use an image from your Blog page -->
+							<img src="img/tesla-3.jpeg" /> <!-- Use an image from your Blog page -->
 						</div>
 						<h3>Tesla Model 3</h3>
 						<p>This is where I keep all of my teaching materials, lectures,
 							PPTs, and so on. Click here if you want to see what my high 
 							school students are learning, or if you want to learn too.
 						</p> <!-- Write some text to introduce your About page -->
-						<a href="blog.html" id="shop-tesla-3">$</a> <!-- Add a link to your Blog page -->
+						<a href="#" id="shop-tesla-3">$</a> <!-- Add a link to your Blog page -->
 					</div>
 
 					<div class="third">
 						<div class="third-img">
-							<img src="img/java-class.jpg" /> <!-- Use an image from your Contact page -->
+							<img src="img/tesla-x.jpeg" /> <!-- Use an image from your Contact page -->
 						</div>
 						<h3>Tesla Model X</h3>
 						<p>Contact me if you want to learn more, or hire me for some outside
 							consultation, design, or development work. I'm active in the 
 							WordPress community and love to build websites!~
 						</p> <!-- Write some text to introduce your About page -->
-						<a href="contact.html" id="shop-tesla-x">$</a> <!-- Add a link to your Contact page -->
+						<a href="#" id="shop-tesla-x">$</a> <!-- Add a link to your Contact page -->
 					</div>
 					
 					<div class="clear"></div>
