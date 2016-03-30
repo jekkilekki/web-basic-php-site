@@ -2,7 +2,14 @@
 require_once( 'functions.php' );
 
 if( isset( $_POST[ 'submit' ] ) ) {
-    $from_time = $_POST[ 'from_time' ];
+    $from_month = $_POST[ 'from_month' ];
+    $from_day = $_POST[ 'from_day' ];
+    $from_year = $_POST[ 'from_year' ];
+    $from_hour = $_POST[ 'from_hour' ];
+    $from_minute = $_POST[ 'from_minute' ];
+    
+    // Do some error checking / sanitizing here
+    $from_time = $from_year . "/" . $from_month . "/" . $from_day . " " . $from_hour . ":" . $from_minute;
     $from_tz = $_POST[ 'from_tz' ];
     $to_tz = $_POST[ 'to_tz' ];
     
@@ -33,7 +40,23 @@ if( isset( $_POST[ 'submit' ] ) ) {
             <dl>
                 <dt>From Time:</dt>
                 <dd>
-                    <input type="text" name="from_time" size="40" value="<?= $from_time; ?>">
+                    <select name="from_month">
+                        <?= month_select_options( $from_month ); ?>
+                    </select>
+                    <select name="from_day">
+                        <?= day_select_options( $from_day ); ?>
+                    </select>
+                    <select name="from_year">
+                        <?= year_select_options( $from_year ); ?>
+                    </select>
+                    -
+                    <select name="from_hour">
+                        <?= hour_select_options( $from_hour ); ?>
+                    </select>
+                    :
+                    <select name="from_minute">
+                        <?= minute_select_options( $from_minute ); ?>
+                    </select>
                 </dd>
             </dl>
             <dl>
