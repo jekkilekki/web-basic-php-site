@@ -1,4 +1,9 @@
 <?php
+/*
+ * Alternative tools
+ * https://github.com/garetjax/phpbrowscap
+ * https://github.com/piwik/device-detector
+ */
 
 class BrowserDetective {
     
