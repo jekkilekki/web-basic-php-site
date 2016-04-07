@@ -1,10 +1,9 @@
 <?php
 /* 
- * Area Measures
- *  - Imperial: sq.inch, sq.foot, sq.yard, sq.mile
- *  - Metric: sq.millimeter, sq.centimeter, sq.meter, sq.kilometer
- *  - Survey: acre, hectare
- *  - Korea: pyoung
+ * Speed Measures ( speed = distance / time )
+ *  - Imperial: feet per second, miles per hour 
+ *  - Metric: meters per second, kilometers per hour
+ *  - Maritime: knot
  */
 
 ini_set('display_errors', 1);
@@ -25,26 +24,21 @@ if( isset( $_POST[ 'submit' ] ) ) {
     $from_value = $_POST[ 'from_value' ];
     $from_unit = $_POST[ 'from_unit' ];
     $to_unit = $_POST[ 'to_unit' ];
-    $to_value = convert_area( $from_value, $from_unit, $to_unit );
+    $to_value = convert_speed( $from_value, $from_unit, $to_unit );
     
 }
 
-$area_options = array(
-    'square inches',
-    'square feet',
-    'square yards',
-    'square miles',
-    'square millimeters',
-    'square centimeters',
-    'square meters',
-    'square kilometers',
-    'acres',
-    'hectares',
-    'pyoung (KO)'
+$speed_options = array(
+    'feet per second',
+    'miles per hour',
+    'meters per second',
+    'kilometers per hour',
+    'knots'
 );
+
 ?>
 
-<h2>Area Conversion</h2>
+<h2>Speed Conversion</h2>
 
 <form action="" method="POST">
 
@@ -54,7 +48,7 @@ $area_options = array(
         <select name="from_unit">
             
             <?php
-            foreach( $area_options as $unit ) {
+            foreach( $speed_options as $unit ) {
                 $opt = optionize( $unit );
                 echo "<option value='$opt'";
                 if( $from_unit == $opt ) { echo " selected"; }
@@ -71,10 +65,10 @@ $area_options = array(
         <select name="to_unit">
             
             <?php
-            foreach( $area_options as $unit ) {
+            foreach( $speed_options as $unit ) {
                 $opt = optionize( $unit );
                 echo "<option value='$opt'";
-                if( $from_unit == $opt ) { echo " selected"; }
+                if( $to_unit == $opt ) { echo " selected"; }
                 echo ">$unit</option>";
             }
             ?>

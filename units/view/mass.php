@@ -1,10 +1,14 @@
 <?php
 /* 
- * Area Measures
- *  - Imperial: sq.inch, sq.foot, sq.yard, sq.mile
- *  - Metric: sq.millimeter, sq.centimeter, sq.meter, sq.kilometer
- *  - Survey: acre, hectare
- *  - Korea: pyoung
+ * Mass / Weight Measures
+ *  : mass = amount of matter (doesn't change) - uses a balance : standard unit = kilogram
+ *  : weight = amount of gravity pull (can change (on the moon)) - uses a scale = newton
+ *      weight in Newtons = 9.8 * mass in kg
+ *
+ *  - Imperial: ounce, pound, stone, long ton 
+ *  - US: short ton
+ *  - Metric: milligram, gram, kilogram, tonne
+ *  - Other: troy ounce, solar mass, Plank mass
  */
 
 ini_set('display_errors', 1);
@@ -25,26 +29,26 @@ if( isset( $_POST[ 'submit' ] ) ) {
     $from_value = $_POST[ 'from_value' ];
     $from_unit = $_POST[ 'from_unit' ];
     $to_unit = $_POST[ 'to_unit' ];
-    $to_value = convert_area( $from_value, $from_unit, $to_unit );
+    $to_value = convert_mass( $from_value, $from_unit, $to_unit );
     
 }
 
-$area_options = array(
-    'square inches',
-    'square feet',
-    'square yards',
-    'square miles',
-    'square millimeters',
-    'square centimeters',
-    'square meters',
-    'square kilometers',
-    'acres',
-    'hectares',
-    'pyoung (KO)'
+$mass_options = array(
+    'ounces',
+    'pounds',
+    'stones',
+    'long tons',
+    'short tons',
+    'milligrams',
+    'grams',
+    'kilograms',
+    'metric tonnes',
+    'carats'            // http://io9.gizmodo.com/5827925/ten-unbelievably-strange-units-of-measurement
 );
+
 ?>
 
-<h2>Area Conversion</h2>
+<h2>Mass Conversion</h2>
 
 <form action="" method="POST">
 
@@ -54,7 +58,7 @@ $area_options = array(
         <select name="from_unit">
             
             <?php
-            foreach( $area_options as $unit ) {
+            foreach( $mass_options as $unit ) {
                 $opt = optionize( $unit );
                 echo "<option value='$opt'";
                 if( $from_unit == $opt ) { echo " selected"; }
@@ -71,10 +75,10 @@ $area_options = array(
         <select name="to_unit">
             
             <?php
-            foreach( $area_options as $unit ) {
+            foreach( $mass_options as $unit ) {
                 $opt = optionize( $unit );
                 echo "<option value='$opt'";
-                if( $from_unit == $opt ) { echo " selected"; }
+                if( $to_unit == $opt ) { echo " selected"; }
                 echo ">$unit</option>";
             }
             ?>

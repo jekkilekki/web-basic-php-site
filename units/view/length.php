@@ -9,7 +9,8 @@
  */
 
 ini_set('display_errors', 1);
-require_once( '../inc/functions.php' );
+// require_once( '../inc/functions.php' );
+require_once( '../inc/functions-5.5.php' );
 
 /*
  * Form submitted
@@ -53,10 +54,19 @@ $length_options = array(
     'chains',
     'furlongs'
 );
+$silly_lengths = array(
+    'attoparsecs',
+    'beard-seconds',
+    'Smoots',
+    'Mickeys',
+    'Altuves',
+    'sheppies',
+    'wiffles',
+);
 
 ?>
 
-<h2>Length Conversion</h2>
+<h2>Length / Distance Conversion</h2>
 
 <form action="" method="POST">
 
@@ -73,13 +83,22 @@ $length_options = array(
                 echo ">$unit</option>";
             }
             ?>
+            <option value="" disabled>-- Silly Units --</option>
+            <?php
+            foreach( $silly_lengths as $unit ) {
+                $opt = optionize( $unit );
+                echo "<option value='$opt'";
+                if( $from_unit == $opt ) { echo " selected"; }
+                echo ">$unit</option>";
+            }
+            ?>
 
         </select>
     </div>
     
     <div class="entry">
         <label>To: </label>
-        <input type="text" name="to_value" value="<?= $to_value; ?>">
+        <input type="text" name="to_value" value="<?= float_to_string( $to_value, 20 ); ?>">
         <select name="to_unit">
             
             <?php
@@ -90,6 +109,15 @@ $length_options = array(
                 echo ">$unit</option>";
             }
             ?> 
+            <option value="" disabled>-- Silly Units --</option>
+            <?php
+            foreach( $silly_lengths as $unit ) {
+                $opt = optionize( $unit );
+                echo "<option value='$opt'";
+                if( $from_unit == $opt ) { echo " selected"; }
+                echo ">$unit</option>";
+            }
+            ?>
             
         </select>
     </div>

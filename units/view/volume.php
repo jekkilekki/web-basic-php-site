@@ -11,7 +11,8 @@
  */
 
 ini_set('display_errors', 1);
-require_once( '../inc/functions.php' );
+// require_once( '../inc/functions.php' );
+require_once( '../inc/functions-5.5.php' );
 
 /*
  * Form submitted
@@ -23,8 +24,6 @@ $to_unit = '';
 $to_value = '';
 
 if( isset( $_POST[ 'submit' ] ) ) {
-    
-    echo '<script>alert("submitted");</script>';
     
     $from_value = $_POST[ 'from_value' ];
     $from_unit = $_POST[ 'from_unit' ];
@@ -81,7 +80,7 @@ $volume_options = array(
     
     <div class="entry">
         <label>To: </label>
-        <input type="text" name="to_value" value="<?= $to_value; ?>">
+        <input type="text" name="to_value" value="<?= float_to_string( $to_value ); ?>">
         <select name="to_unit">
             
             <?php

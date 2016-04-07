@@ -1,10 +1,10 @@
 <?php
 /* 
- * Area Measures
- *  - Imperial: sq.inch, sq.foot, sq.yard, sq.mile
- *  - Metric: sq.millimeter, sq.centimeter, sq.meter, sq.kilometer
- *  - Survey: acre, hectare
- *  - Korea: pyoung
+ * Temperature Measures
+ *  - Systems: Celsius, Fahrenheit, Kelvin
+ *  : F = (C * 180/100) + 32 = (C * 9/5) + 32 = (C * 1.8) + 32
+ *  : C = (F - 32) * 100/180 = (F - 32) * 5/9 = (F - 32) / 1.8
+ *  : 0K = -273.15C && 0C = 273.15K
  */
 
 ini_set('display_errors', 1);
@@ -25,26 +25,19 @@ if( isset( $_POST[ 'submit' ] ) ) {
     $from_value = $_POST[ 'from_value' ];
     $from_unit = $_POST[ 'from_unit' ];
     $to_unit = $_POST[ 'to_unit' ];
-    $to_value = convert_area( $from_value, $from_unit, $to_unit );
+    $to_value = convert_temperature( $from_value, $from_unit, $to_unit );
     
 }
 
-$area_options = array(
-    'square inches',
-    'square feet',
-    'square yards',
-    'square miles',
-    'square millimeters',
-    'square centimeters',
-    'square meters',
-    'square kilometers',
-    'acres',
-    'hectares',
-    'pyoung (KO)'
+$temperature_options = array(
+    'Celsius',
+    'Fahrenheit',
+    'Kelvin',
 );
+
 ?>
 
-<h2>Area Conversion</h2>
+<h2>Temperature Conversion</h2>
 
 <form action="" method="POST">
 
@@ -54,7 +47,7 @@ $area_options = array(
         <select name="from_unit">
             
             <?php
-            foreach( $area_options as $unit ) {
+            foreach( $temperature_options as $unit ) {
                 $opt = optionize( $unit );
                 echo "<option value='$opt'";
                 if( $from_unit == $opt ) { echo " selected"; }
@@ -71,10 +64,10 @@ $area_options = array(
         <select name="to_unit">
             
             <?php
-            foreach( $area_options as $unit ) {
+            foreach( $temperature_options as $unit ) {
                 $opt = optionize( $unit );
                 echo "<option value='$opt'";
-                if( $from_unit == $opt ) { echo " selected"; }
+                if( $to_unit == $opt ) { echo " selected"; }
                 echo ">$unit</option>";
             }
             ?>
