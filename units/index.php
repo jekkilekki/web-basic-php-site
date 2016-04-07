@@ -19,6 +19,59 @@
  *  - Torque
  */
 ini_set('display_errors', 1);
+require_once( 'inc/functions-5.5.php' );
+
+$convert_options = array(
+    'area',
+    'data transfer rate',
+    'digital storage',
+    'energy',
+    'frequency',
+    'fuel economy',
+    'length',
+    'mass',
+    'plane angle',
+    'pressure',
+    'speed',
+    'temperature',
+    'time',
+    'volume'
+);
+// https://support.google.com/websearch/answer/3284611?hl=en-KR#unitconverter
+$full_convert_options = array(
+    'angles',
+    'area',
+    'currency',
+    'data transfer rate',
+    'electric capacitance',
+    'electric charge',
+    'electric conductance',
+    'electric current',
+    'energy',
+    'flow rate',
+    'force',
+    'frequency',
+    'fuel consumption',
+    'inductance',
+    'information size',
+    'length',
+    'light intensity',
+    'magnetic flux',
+    'misc',
+    'power',
+    'pressure',
+    'radiation dosage',
+    'radioactivity',
+    'speed',
+    'temperature',
+    'time',
+    'unitless (numeric)',
+    'voltage',
+    'volume',
+    'weight'
+);
+
+$convert_this = '';
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +104,28 @@ ini_set('display_errors', 1);
             <li><a href="view/pressure.php">Pressure</a></li>
             <li><a href="view/torque.php">Torque</a></li>
         </ul>
+        
+        <?php
+        /*
+         * Make it work like Google's : https://support.google.com/websearch/answer/3284611?hl=en-KR#unitconverter
+         *
+         * Dynamically repopulate the lower list of options based on conversion type selected
+         * @link: http://stackoverflow.com/questions/22201149/ajax-javascript-select-element-change-on-page-load-in-php
+         * @link: http://www.dyn-web.com/tutorials/forms/select/paired.php
+         */
+        ?>
+        <form action="" method="POST">
+            <select name="conversion_type">
+                <?php
+                foreach( $convert_options as $type ) {
+                    $opt = optionize( $type );
+                    echo "<option value='$opt'";
+                    if( $convert_this == $opt ) { echo " selected"; }
+                    echo ">" . ucfirst( $type ) . "</option>";
+                }
+                ?>
+            </select>
+        </form>
         
     </main>
 
