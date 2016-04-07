@@ -18,7 +18,7 @@
  *  - Pressure
  *  - Torque
  */
-
+ini_set('display_errors', 1);
 ?>
 
 <!DOCTYPE html>
@@ -35,21 +35,21 @@
         <h1>Unit Conversion</h1>
         
         <ul id="unit-types">
-            <li><a href="inc/length.php">Length and distance</a></li>
-            <li><a href="inc/area.php">Area</a></li>
-            <li><a href="inc/volume.php">Volume</a></li>
-            <li><a href="inc/mass.php">Mass</a></li>
-            <li><a href="inc/speed.php">Speed</a></li>
-            <li><a href="inc/temperature.php">Temperature</a></li>
-            <li><a href="inc/acceleration.php">Acceleration</a></li>
-            <li><a href="inc/density.php">Density</a></li>
-            <li><a href="inc/energy.php">Energy</a></li>
-            <li><a href="inc/force.php">Force</a></li>
-            <li><a href="inc/frequency.php">Frequency</a></li>
-            <li><a href="inc/light.php">Light</a></li>
-            <li><a href="inc/power.php">Power</a></li>
-            <li><a href="inc/pressure.php">Pressure</a></li>
-            <li><a href="inc/torque.php">Torque</a></li>
+            <li><a href="view/length.php">Length and distance</a></li>
+            <li><a href="view/area.php">Area</a></li>
+            <li><a href="view/volume.php">Volume</a></li>
+            <li><a href="view/mass.php">Mass</a></li>
+            <li><a href="view/speed.php">Speed</a></li>
+            <li><a href="view/temperature.php">Temperature</a></li>
+            <li><a href="view/acceleration.php">Acceleration</a></li>
+            <li><a href="view/density.php">Density</a></li>
+            <li><a href="view/energy.php">Energy</a></li>
+            <li><a href="view/force.php">Force</a></li>
+            <li><a href="view/frequency.php">Frequency</a></li>
+            <li><a href="view/light.php">Light</a></li>
+            <li><a href="view/power.php">Power</a></li>
+            <li><a href="view/pressure.php">Pressure</a></li>
+            <li><a href="view/torque.php">Torque</a></li>
         </ul>
         
     </main>

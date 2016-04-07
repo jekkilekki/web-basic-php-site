@@ -1,9 +1,11 @@
 <?php
 /* 
  * Length / Distance Measures
- *  - Imperial: inch, foot, yard, mile
- *  - Metric: millimeter, centimeter, meter, kilometer
- *  - Astronomical: astronomical unit, light year, parsec
+ *  - cubic inch, cubic foot, cubic centimeter, cubic meter
+ *  - Imperial: gallon, quart, pint, cup, ounce, tablespoon, teaspoon 
+ *      // almost 80% size of US measures
+ *  - US: gallon, quart, pint, cup, ounce, tablespoon, teaspoon
+ *  - Metric: milliliter, liter
  *  - Maritime: fathom, cable, nautical mile, league
  *  - Survey: link, rod, chain, furlong
  */
@@ -22,41 +24,41 @@ $to_value = '';
 
 if( isset( $_POST[ 'submit' ] ) ) {
     
+    echo '<script>alert("submitted");</script>';
+    
     $from_value = $_POST[ 'from_value' ];
     $from_unit = $_POST[ 'from_unit' ];
     $to_unit = $_POST[ 'to_unit' ];
-    $to_value = convert_length( $from_value, $from_unit, $to_unit );
+    $to_value = convert_volume( $from_value, $from_unit, $to_unit );
     
 }
 
-$length_options = array(
-    'inches',
-    'feet',
-    'yards',
-    'miles',
-    'nanometers',
-    'micrometers',
-    'millimeters',
-    'centimeters',
-    'meters',
-    'kilometers',
-    'astronomical units',
-    'light-years',
-    'parsecs',
-    'fathoms',
-    'cables (international)',
-    'cables (US)',
-    'nautical miles',
-    'leagues',
-    'links',
-    'rods',
-    'chains',
-    'furlongs'
+$volume_options = array(
+    'cubic inches',
+    'cubic feet',
+    'Imperial gallons',
+    'Imperial quarts',
+    'Imperial pints',
+    'Imperial cups',
+    'Imperial ounces',
+    'Imperial tablespoons',
+    'Imperial teaspoons',
+    'US gallons',
+    'US quarts',
+    'US pints',
+    'US cups',
+    'US ounces',
+    'US tablespoons',
+    'US teaspoons',
+    'cubic centimeters',
+    'cubic meters',
+    'liters',
+    'milliliters'
 );
 
 ?>
 
-<h2>Length Conversion</h2>
+<h2>Volume Conversion</h2>
 
 <form action="" method="POST">
 
@@ -66,14 +68,14 @@ $length_options = array(
         <select name="from_unit">
             
             <?php
-            foreach( $length_options as $unit ) {
+            foreach( $volume_options as $unit ) {
                 $opt = optionize( $unit );
                 echo "<option value='$opt'";
                 if( $from_unit == $opt ) { echo " selected"; }
                 echo ">$unit</option>";
             }
             ?>
-
+            
         </select>
     </div>
     
@@ -83,13 +85,13 @@ $length_options = array(
         <select name="to_unit">
             
             <?php
-            foreach( $length_options as $unit ) {
+            foreach( $volume_options as $unit ) {
                 $opt = optionize( $unit );
                 echo "<option value='$opt'";
-                if( $from_unit == $opt ) { echo " selected"; }
+                if( $to_unit == $opt ) { echo " selected"; }
                 echo ">$unit</option>";
             }
-            ?> 
+            ?>
             
         </select>
     </div>

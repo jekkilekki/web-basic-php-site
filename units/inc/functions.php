@@ -1,8 +1,6 @@
 <?php 
 /*
  * Functions file - handles ALL conversion functions
- *
- * Use meters as common unit - convert ALL to meters, then convert to specified unit
  */
 
 /*
@@ -15,7 +13,19 @@
 /*
  * =================================================================================
  *
+ * GENERAL functions 
+ *
+ * =================================================================================
+ */
+function optionize( $string ) {
+    return str_replace( ' ', '_', strtolower( $string ) );
+}
+
+/*
+ * =================================================================================
+ *
  * LENGTH conversions
+ * Use METERS as common unit - convert ALL to meters, then convert to specified unit
  *
  * =================================================================================
  */
@@ -45,7 +55,7 @@ const LENGTH_TO_METER = array(
     // Area
     'acres'         => 63.6149072341, // sqrt(4046.8564224) - it will be squared in the function
     'hectares'      => 100,           // sqrt(10000)
-    'pyoung'        => 1.81818590909, // sqrt(3.3058)
+    'pyoung-ko'     => 1.81818590909, // sqrt(3.3058)
 );
 
 function x_to_meters( $value, $from_unit ) {
@@ -74,11 +84,12 @@ function convert_length( $value, $from_unit, $to_unit ) {
  * =================================================================================
  *
  * AREA conversions
+ * Use METERS as common unit - convert ALL to meters, then convert to specified unit
  *
  * =================================================================================
  */
 function x_to_sq_meters( $value, $from_unit ) {
-    $from_unit = str_replace( 'sq_', '', $from_unit );
+    $from_unit = str_replace( 'square_', '', $from_unit );
     if( array_key_exists( $from_unit, LENGTH_TO_METER ) ) {
         return $value * pow( LENGTH_TO_METER[ $from_unit ], 2 );
     } else {
@@ -98,5 +109,61 @@ function x_from_sq_meters( $value, $to_unit ) {
 function convert_area( $value, $from_unit, $to_unit ) {
     $sq_meter_value = x_to_sq_meters( $value, $from_unit );
     $new_value = x_from_sq_meters( $sq_meter_value, $to_unit );
+    return $new_value;
+}
+
+/*
+ * =================================================================================
+ *
+ * VOLUME conversions
+ * Use LITERS as common unit - convert ALL to liters, then convert to specified unit
+ *
+ * =================================================================================
+ */
+const VOLUME_TO_LITER = array(
+    'cubic_inches'          => 0.0163871,
+    'cubic_feet'            => 28.3168,
+    'cubic_centimeters'     => 0.001,
+    'cubic_meters'          => 1000,
+    'imperial_gallons'      => 4.54609,
+    'imperial_quarts'       => 1.13652,
+    'imperial_pints'        => 0.568261,
+    'imperial_cups'         => 0.284131,
+    'imperial_ounces'       => 0.0284131,
+    'imperial_tablespoons'  => 0.0177582,
+    'imperial_teaspoons'    => 0.00591939,
+    'us_gallons'            => 3.78541,
+    'us_quarts'             => 0.946353,
+    'us_pints'              => 0.473176,
+    'us_cups'               => 0.24,
+    'us_ounces'             => 0.0295735,
+    'us_tablespoons'        => 0.0147868,
+    'us_teaspoons'          => 0.00492892,
+    'liters'                => 1,
+    'milliliters'           => 0.001,
+);
+
+function x_to_liters( $value, $from_unit ) {
+    echo '<script>alert("X to liters");</script>';
+    if( array_key_exists( $from_unit, VOLUME_TO_LITER ) ) {
+        return $value * VOLUME_TO_LITER[ $from_unit ];
+    } else {
+        return 'Unsupported unit.';
+    }
+}
+
+function x_from_liters( $value, $to_unit ) {
+    echo '<script>alert("X from liters");</script>';
+    if( array_key_exists( $to_unit, VOLUME_TO_LITER ) ) {
+        return $value / VOLUME_TO_LITER[ $to_unit ];
+    } else {
+        return 'Unsupported unit.';
+    }
+}
+
+function convert_volume( $value, $from_unit, $to_unit ) {
+    echo '<script>alert("convert volume");</script>';
+    $liter_value = x_to_liters( $value, $from_unit );
+    $new_value = x_from_liters( $liter_value, $to_unit );
     return $new_value;
 }
