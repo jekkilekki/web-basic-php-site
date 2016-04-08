@@ -73,8 +73,8 @@ document.forms[ 'conversion-form' ].elements[ 'conversion_type' ].onchange = fun
     
     // call function to add optgroup/option elements
     // pass reference to assc select box and data for new options
-    appendDataToSelect( fromList, obj );
-    appendDataToSelect( toList, obj );
+    appendDataToSelect( fromList, Conversion_Unit_Lists );
+    appendDataToSelect( toList, Conversion_Unit_Lists );
 };
 
 // populate associated select box as page loads

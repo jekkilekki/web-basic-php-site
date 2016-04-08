@@ -72,6 +72,21 @@ $full_convert_options = array(
 );
 
 $convert_this = '';
+
+// Set defaults
+$from_value = '';
+$from_unit = '';
+$to_unit = '';
+$to_value = '';
+
+if( isset( $_POST[ 'submit' ] ) ) {
+    
+    $from_value = $_POST[ 'from_value' ];
+    $from_unit = $_POST[ 'from_unit' ];
+    $to_unit = $_POST[ 'to_unit' ];
+    $to_value = convert_area( $from_value, $from_unit, $to_unit );
+    
+}
 ?>
 
 <!DOCTYPE html>
