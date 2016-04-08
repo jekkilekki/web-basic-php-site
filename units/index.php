@@ -114,20 +114,62 @@ $convert_this = '';
          * @link: http://www.dyn-web.com/tutorials/forms/select/paired.php
          */
         ?>
-        <form action="" method="POST">
-            <select name="conversion_type">
-                <?php
-                foreach( $convert_options as $type ) {
-                    $opt = optionize( $type );
-                    echo "<option value='$opt'";
-                    if( $convert_this == $opt ) { echo " selected"; }
-                    echo ">" . ucfirst( $type ) . "</option>";
-                }
-                ?>
-            </select>
-        </form>
+        <form id="conversion-form" action="" method="POST">
+            
+            <div id="conversion-type">
+                <select name="conversion_type">
+                    <?php
+                    foreach( $convert_options as $type ) {
+                        $opt = optionize( $type );
+                        echo "<option value='$opt'";
+                        if( $convert_this == $opt ) { echo " selected"; }
+                        echo ">" . ucfirst( $type ) . "</option>";
+                    }
+                    ?>
+                </select>
+            </div><!-- END #converions-type -->
+            
+            <div id="conversion-units">
+                <div class="entry">
+                    <input type="text" name="from_value" value="<?= $from_value; ?>">
+                    <select name="from_unit">
+
+                        <?php
+                        foreach( $area_options as $unit ) {
+                            $opt = optionize( $unit );
+                            echo "<option value='$opt'";
+                            if( $from_unit == $opt ) { echo " selected"; }
+                            echo ">$unit</option>";
+                        }
+                        ?>
+
+                    </select>
+                </div>
+                <span id="equal-sign">=</span>
+                <div class="entry">
+                    <input type="text" name="to_value" value="<?= float_to_string( $to_value ); ?>">
+                    <select name="to_unit">
+
+                        <?php
+                        foreach( $area_options as $unit ) {
+                            $opt = optionize( $unit );
+                            echo "<option value='$opt'";
+                            if( $from_unit == $opt ) { echo " selected"; }
+                            echo ">$unit</option>";
+                        }
+                        ?>
+
+                    </select>
+                </div>
+            </div><!-- END #conversion-units -->
+
+            <input type="submit" name="submit" value="Submit">
+            
+        </form><!-- END #converion-form -->
         
     </main>
 
+    <script src="js/list.js" type="text/javascript"></script>
+    <script src="js/functions.js" type="text/javascript"></script>
 </body>
 </html>
