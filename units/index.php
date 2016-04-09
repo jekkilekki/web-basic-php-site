@@ -147,15 +147,15 @@ if( isset( $_POST[ 'submit' ] ) ) {
             <div id="conversion-units">
                 <div class="entry">
                     <input type="text" name="from_value" value="<?= $from_value; ?>">
-                    <select name="from_unit">
+                    <select name="from_unit[]">
 
                         <?php
-                        foreach( $area_options as $unit ) {
-                            $opt = optionize( $unit );
-                            echo "<option value='$opt'";
-                            if( $from_unit == $opt ) { echo " selected"; }
-                            echo ">$unit</option>";
-                        }
+//                        foreach( $area_options as $unit ) {
+//                            $opt = optionize( $unit );
+//                            echo "<option value='$opt'";
+//                            if( $from_unit == $opt ) { echo " selected"; }
+//                            echo ">$unit</option>";
+//                        }
                         ?>
 
                     </select>
@@ -163,15 +163,15 @@ if( isset( $_POST[ 'submit' ] ) ) {
                 <span id="equal-sign">=</span>
                 <div class="entry">
                     <input type="text" name="to_value" value="<?= float_to_string( $to_value ); ?>">
-                    <select name="to_unit">
+                    <select name="to_unit[]">
 
                         <?php
-                        foreach( $area_options as $unit ) {
-                            $opt = optionize( $unit );
-                            echo "<option value='$opt'";
-                            if( $from_unit == $opt ) { echo " selected"; }
-                            echo ">$unit</option>";
-                        }
+//                        foreach( $area_options as $unit ) {
+//                            $opt = optionize( $unit );
+//                            echo "<option value='$opt'";
+//                            if( $from_unit == $opt ) { echo " selected"; }
+//                            echo ">$unit</option>";
+//                        }
                         ?>
 
                     </select>
@@ -184,7 +184,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
         
     </main>
 
-    <script src="js/list.js" type="text/javascript"></script>
+    <!-- <script src="js/list.js" type="text/javascript"></script> -->
     <script src="js/functions.js" type="text/javascript"></script>
 </body>
 </html>
