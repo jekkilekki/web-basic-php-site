@@ -7,7 +7,7 @@ var Conversion_Unit_Lists = {
     'from_unit[]': {   // name of associated select box
         
         // names match option values in controlling select box
-        plane_angle: {
+        angles: {
             text: [ 'arc minutes', 'arc seconds', 'degrees', 'radians', 'revolutions', 'turns' ],
         },
         area: {
@@ -18,6 +18,9 @@ var Conversion_Unit_Lists = {
         },
         data_transfer_rate: {
             text: [ 'bits per second (bps)', 'bytes per second (Bps)' ],
+        },
+        digital_storage_size: {
+            text: [ 'bits', 'nybbles', 'bytes', 'metric kilobytes (kB)', 'metric megabytes (MB)', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
         },
         electric_capacitance: {
             text: [ 'farads' ],
@@ -49,10 +52,7 @@ var Conversion_Unit_Lists = {
         inductance: {
             text: [ 'henries' ],
         },
-        digital_storage: {
-            text: [ 'bits', 'nybbles', 'bytes', 'metric kilobytes (kB)', 'metric megabytes (MB)', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
-        },
-        length: {
+        length_and_distance: {
             text: [ 'angstrom', 'Astronomical Units', 'ATA picas', 'ATA points', 'beard-seconds', 'chains', 'Ciceros', 'cubits', 'Didot points', 'English ells', 'fathoms', 'feet' , 'Flemish ells', 'football fields', 'football pitches', 'French ells', 'furlongs', 'Half Ironman Triathlon bikes', 'Half Ironman Triathlon runs', 'Half Ironman Triathlon swims', 'Half Ironman Triathlons', 'hands', 'Imperial cables', 'IN picas', 'IN Points', 'inches', 'indoor track lengths', 'international cables', 'Ironman Triathlon bikes', 'Ironman Triathlon runs', 'Ironman Triathlon swims', 'Ironman Triathlons', 'itinerary stadions', 'kilometers', 'Kpc', 'length of cricket pitches', 'light-days', 'light-hours', 'light-minutes', 'light-seconds', 'light-years', 'marathons', 'meters', 'metres', 'metres', 'microns', 'miles', 'Mpc', 'nails', 'nautical leagues', 'nautical miles', 'Olympic Pools', 'Olympic stadion', 'Olympic Triathlon bikes', 'Olympic Triathlon runs', 'Olympic Triathlon swims', 'Olympic Triathlons', 'outdoor track lengths', 'Parsecs', 'Planck Lengths', 'PostScript picas', 'PostScript points', 'Rack units', 'rods', 'Scottish ells', 'Short Course Pools', 'smoots', 'spans', 'Sprint Triathlon bikes', 'Sprint Triathlon runs', 'Sprint Triathlon swims', 'Sprint Triathlons', 'TeX picas', 'TeX points', 'thou', 'Truchet picas', 'Truchet points', 'US cables', 'yards' ],
         },
         light_intensity: {
@@ -60,6 +60,9 @@ var Conversion_Unit_Lists = {
         },
         magnetic_flux: {
             text: [ 'gauss', 'maxwells', 'teslas', 'webers' ],
+        },
+        mass_and_weight: {
+            text: [ 'atomic mass units', 'Blintzes', 'butter firkins', 'carats', 'drams', 'earth masses', 'English stones', 'Farshimmelt Blintzes', 'funt', 'Furshlugginer Blintzes', 'grains', 'grams', 'imperial tons', 'jupiter masses', 'kilograms', 'lunar masses', 'metric tonnes', 'micrograms', 'ounces', 'pennyweights', 'pood', 'pounds', 'short tons', 'slugs', 'soap firkins', 'solar masses', 'stones', 'troy drams', 'troy ounces' ],
         },
         misc: {
             text: [ 'dioptres', 'emus', 'katal', 'moles' ],
@@ -94,16 +97,13 @@ var Conversion_Unit_Lists = {
         volume: {
             text: [ 'acre-feet', 'barrels of oil', 'beer barrels', 'beer firkins', 'beer hogsheads', 'beer kilderkins', 'board feet', 'bushels', 'cords', 'cubic centimeters', 'cubic feet', 'cubic inches', 'cubic kilometers', 'cubic meters', 'cubic millimeters', 'cups', 'English tierces', 'fluid barrels', 'fluid drams', 'fluid ounces', 'full kegs', 'gallons', 'gills', 'Gross Register Tonnes', 'half barrels', 'hogsheads', 'Imperial beer barrels', 'Imperial bushels', 'Imperial dessertspoons', 'Imperial fluid drams', 'Imperial fluid ounces', 'Imperial fluid ounces', 'Imperial gallons', 'Imperial gills', 'Imperial minims', 'Imperial pecks', 'Imperial pints', 'Imperial quarts', 'Imperial tablespoons', 'Imperial teaspoons', 'liters', 'litres', 'minims', 'pecks', 'pints', 'puncheons', 'quarter barrels', 'quarts', 'register tonnes', 'shots', 'sixth barrels', 'sticks of butter', 'tablespoons', 'teaspoons', 'tierces', 'wine firkins', 'wine rundlets' ],
         },
-        mass: {
-            text: [ 'atomic mass units', 'Blintzes', 'butter firkins', 'carats', 'drams', 'earth masses', 'English stones', 'Farshimmelt Blintzes', 'funt', 'Furshlugginer Blintzes', 'grains', 'grams', 'imperial tons', 'jupiter masses', 'kilograms', 'lunar masses', 'metric tonnes', 'micrograms', 'ounces', 'pennyweights', 'pood', 'pounds', 'short tons', 'slugs', 'soap firkins', 'solar masses', 'stones', 'troy drams', 'troy ounces' ],
-        }
         
     },
     
     'to_unit[]': {   // name of associated select box
         
         // names match option values in controlling select box
-        plane_angle: {
+        angles: {
             text: [ 'arc minutes', 'arc seconds', 'degrees', 'radians', 'revolutions', 'turns' ],
         },
         area: {
@@ -114,6 +114,9 @@ var Conversion_Unit_Lists = {
         },
         data_transfer_rate: {
             text: [ 'bits per second (bps)', 'bytes per second (Bps)' ],
+        },
+        digital_storage_size: {
+            text: [ 'bits', 'nybbles', 'bytes', 'metric kilobytes (kB)', 'metric megabytes (MB)', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
         },
         electric_capacitance: {
             text: [ 'farads' ],
@@ -145,10 +148,7 @@ var Conversion_Unit_Lists = {
         inductance: {
             text: [ 'henries' ],
         },
-        digital_storage: {
-            text: [ 'bits', 'nybbles', 'bytes', 'metric kilobytes (kB)', 'metric megabytes (MB)', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
-        },
-        length: {
+        length_and_distance: {
             text: [ 'angstrom', 'Astronomical Units', 'ATA picas', 'ATA points', 'beard-seconds', 'chains', 'Ciceros', 'cubits', 'Didot points', 'English ells', 'fathoms', 'feet' , 'Flemish ells', 'football fields', 'football pitches', 'French ells', 'furlongs', 'Half Ironman Triathlon bikes', 'Half Ironman Triathlon runs', 'Half Ironman Triathlon swims', 'Half Ironman Triathlons', 'hands', 'Imperial cables', 'IN picas', 'IN Points', 'inches', 'indoor track lengths', 'international cables', 'Ironman Triathlon bikes', 'Ironman Triathlon runs', 'Ironman Triathlon swims', 'Ironman Triathlons', 'itinerary stadions', 'kilometers', 'Kpc', 'length of cricket pitches', 'light-days', 'light-hours', 'light-minutes', 'light-seconds', 'light-years', 'marathons', 'meters', 'metres', 'metres', 'microns', 'miles', 'Mpc', 'nails', 'nautical leagues', 'nautical miles', 'Olympic Pools', 'Olympic stadion', 'Olympic Triathlon bikes', 'Olympic Triathlon runs', 'Olympic Triathlon swims', 'Olympic Triathlons', 'outdoor track lengths', 'Parsecs', 'Planck Lengths', 'PostScript picas', 'PostScript points', 'Rack units', 'rods', 'Scottish ells', 'Short Course Pools', 'smoots', 'spans', 'Sprint Triathlon bikes', 'Sprint Triathlon runs', 'Sprint Triathlon swims', 'Sprint Triathlons', 'TeX picas', 'TeX points', 'thou', 'Truchet picas', 'Truchet points', 'US cables', 'yards' ],
         },
         light_intensity: {
@@ -156,6 +156,9 @@ var Conversion_Unit_Lists = {
         },
         magnetic_flux: {
             text: [ 'gauss', 'maxwells', 'teslas', 'webers' ],
+        },
+        mass_and_weight: {
+            text: [ 'atomic mass units', 'Blintzes', 'butter firkins', 'carats', 'drams', 'earth masses', 'English stones', 'Farshimmelt Blintzes', 'funt', 'Furshlugginer Blintzes', 'grains', 'grams', 'imperial tons', 'jupiter masses', 'kilograms', 'lunar masses', 'metric tonnes', 'micrograms', 'ounces', 'pennyweights', 'pood', 'pounds', 'short tons', 'slugs', 'soap firkins', 'solar masses', 'stones', 'troy drams', 'troy ounces' ],
         },
         misc: {
             text: [ 'dioptres', 'emus', 'katal', 'moles' ],
@@ -190,9 +193,6 @@ var Conversion_Unit_Lists = {
         volume: {
             text: [ 'acre-feet', 'barrels of oil', 'beer barrels', 'beer firkins', 'beer hogsheads', 'beer kilderkins', 'board feet', 'bushels', 'cords', 'cubic centimeters', 'cubic feet', 'cubic inches', 'cubic kilometers', 'cubic meters', 'cubic millimeters', 'cups', 'English tierces', 'fluid barrels', 'fluid drams', 'fluid ounces', 'full kegs', 'gallons', 'gills', 'Gross Register Tonnes', 'half barrels', 'hogsheads', 'Imperial beer barrels', 'Imperial bushels', 'Imperial dessertspoons', 'Imperial fluid drams', 'Imperial fluid ounces', 'Imperial fluid ounces', 'Imperial gallons', 'Imperial gills', 'Imperial minims', 'Imperial pecks', 'Imperial pints', 'Imperial quarts', 'Imperial tablespoons', 'Imperial teaspoons', 'liters', 'litres', 'minims', 'pecks', 'pints', 'puncheons', 'quarter barrels', 'quarts', 'register tonnes', 'shots', 'sixth barrels', 'sticks of butter', 'tablespoons', 'teaspoons', 'tierces', 'wine firkins', 'wine rundlets' ],
         },
-        mass: {
-            text: [ 'atomic mass units', 'Blintzes', 'butter firkins', 'carats', 'drams', 'earth masses', 'English stones', 'Farshimmelt Blintzes', 'funt', 'Furshlugginer Blintzes', 'grains', 'grams', 'imperial tons', 'jupiter masses', 'kilograms', 'lunar masses', 'metric tonnes', 'micrograms', 'ounces', 'pennyweights', 'pood', 'pounds', 'short tons', 'slugs', 'soap firkins', 'solar masses', 'stones', 'troy drams', 'troy ounces' ],
-        }
         
     }
     

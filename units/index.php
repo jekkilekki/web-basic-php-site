@@ -22,15 +22,15 @@ ini_set('display_errors', 1);
 require_once( 'inc/functions-5.5.php' );
 
 $convert_options = array(
+    'angles',
     'area',
     'data transfer rate',
     'digital storage',
     'energy',
     'frequency',
     'fuel economy',
-    'length',
-    'mass',
-    'plane angle',
+    'length and distance',
+    'mass and weight',
     'pressure',
     'speed',
     'temperature',
@@ -39,10 +39,13 @@ $convert_options = array(
 );
 // https://support.google.com/websearch/answer/3284611?hl=en-KR#unitconverter
 $full_convert_options = array(
+    'acceleration',
     'angles',
     'area',
     'currency',
     'data transfer rate',
+    'density',
+    'digital storage size',
     'electric capacitance',
     'electric charge',
     'electric conductance',
@@ -51,12 +54,12 @@ $full_convert_options = array(
     'flow rate',
     'force',
     'frequency',
-    'fuel consumption',
+    'fuel economy',
     'inductance',
-    'information size',
-    'length',
+    'length and distance',
     'light intensity',
     'magnetic flux',
+    'mass and weight',
     'misc',
     'power',
     'pressure',
@@ -65,10 +68,10 @@ $full_convert_options = array(
     'speed',
     'temperature',
     'time',
-    'unitless (numeric)',
+    'torque',
+    'unitless numeric',
     'voltage',
     'volume',
-    'weight'
 );
 
 $convert_this = '';
@@ -103,20 +106,20 @@ if( isset( $_POST[ 'submit' ] ) ) {
         <h1>Unit Conversion</h1>
         
         <ul id="unit-types">
-            <li><a href="view/length.php">Length and distance</a></li>
-            <li><a href="view/area.php">Area</a></li>
-            <li><a href="view/volume.php">Volume</a></li>
-            <li><a href="view/mass.php">Mass</a></li>
-            <li><a href="view/speed.php">Speed</a></li>
-            <li><a href="view/temperature.php">Temperature</a></li>
+<!--            <li><a href="view/length.php">Length and distance</a></li>-->
+<!--            <li><a href="view/area.php">Area</a></li>-->
+<!--            <li><a href="view/volume.php">Volume</a></li>-->
+<!--            <li><a href="view/mass.php">Mass</a></li>-->
+<!--            <li><a href="view/speed.php">Speed</a></li>-->
+<!--            <li><a href="view/temperature.php">Temperature</a></li>-->
             <li><a href="view/acceleration.php">Acceleration</a></li>
             <li><a href="view/density.php">Density</a></li>
-            <li><a href="view/energy.php">Energy</a></li>
-            <li><a href="view/force.php">Force</a></li>
-            <li><a href="view/frequency.php">Frequency</a></li>
-            <li><a href="view/light.php">Light</a></li>
-            <li><a href="view/power.php">Power</a></li>
-            <li><a href="view/pressure.php">Pressure</a></li>
+<!--            <li><a href="view/energy.php">Energy</a></li>-->
+<!--            <li><a href="view/force.php">Force</a></li>-->
+<!--            <li><a href="view/frequency.php">Frequency</a></li>-->
+<!--            <li><a href="view/light.php">Light</a></li>-->
+<!--            <li><a href="view/power.php">Power</a></li>-->
+<!--            <li><a href="view/pressure.php">Pressure</a></li>-->
             <li><a href="view/torque.php">Torque</a></li>
         </ul>
         
@@ -133,14 +136,25 @@ if( isset( $_POST[ 'submit' ] ) ) {
             
             <div id="conversion-type">
                 <select name="conversion_type">
+                    
                     <?php
-                    foreach( $convert_options as $type ) {
-                        $opt = optionize( $type );
-                        echo "<option value='$opt'";
-                        if( $convert_this == $opt ) { echo " selected"; }
-                        echo ">" . ucfirst( $type ) . "</option>";
+                    if( false ) {
+                        foreach( $convert_options as $type ) {
+                            $opt = optionize( $type );
+                            echo "<option value='$opt'";
+                            if( $convert_this == $opt ) { echo " selected"; }
+                            echo ">" . ucfirst( $type ) . "</option>";
+                        }
+                    } else {
+                        foreach( $full_convert_options as $type ) {
+                            $opt = optionize( $type );
+                            echo "<option value='$opt'";
+                            if( $convert_this == $opt ) { echo " selected"; }
+                            echo ">" . ucfirst( $type ) . "</option>";
+                        }
                     }
                     ?>
+                    
                 </select>
             </div><!-- END #converions-type -->
             
