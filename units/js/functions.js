@@ -216,7 +216,7 @@ function removeAllOptions( sel, removeGrp ) {
     }
 }
 
-function appendDataToSelect( sel, obj ) {
+function appendDataToSelect( sel, obj, index='' ) {
     var f = document.createDocumentFragment();
     var labels = [], group, opts;
     
@@ -230,6 +230,10 @@ function appendDataToSelect( sel, obj ) {
             
             if( obj.value ) {
                 o.value = obj.value[ i ];
+            }
+            
+            if( i == index ) {
+                o.selected = true;
             }
             
             f.appendChild( o );
@@ -255,10 +259,14 @@ function appendDataToSelect( sel, obj ) {
         }
     }
     sel.appendChild( f );
+    
 }
+
+// var selectedOption = '';
 
 // anonymous function assigned to onchange event of controlling select box
 document.forms[ 'conversion-form' ].elements[ 'conversion_type' ].onchange = function( e ) {
+    
     // name of associated select box
     var fromName = 'from_unit[]';
     var toName = 'to_unit[]';
@@ -276,30 +284,34 @@ document.forms[ 'conversion-form' ].elements[ 'conversion_type' ].onchange = fun
     
     appendDataToSelect( fromList, Conversion_Unit_Lists[ fromName ][ this.value ] );
     appendDataToSelect( toList, Conversion_Unit_Lists[ toName ][ this.value ] );
+    
 };
+
+
 
 // populate associated select box as page loads
 window.onload = function() { // immediate function to avoid globals
+        
+        var form = document.forms[ 'conversion-form' ];
     
-    var form = document.forms[ 'conversion-form' ];
+        // reference to controlling select box
+        var sel = form.elements[ 'conversion_type' ];
+        sel.selectedIndex = selectedOption;
+
+        // name of assc select box
+        var fromName = 'from_unit[]';
+        var toName = 'to_unit[]';
+        // reference to assc select box
+        var from = form.elements[ fromName ];
+        var to = form.elements[ toName ];
+
+        // get data for assc select box passing its name
+        // and value of selected in controlling select box
+        var fromData = Conversion_Unit_Lists[ fromName ][ sel.value ];
+        var toData = Conversion_Unit_Lists[ toName ][ sel.value ];
+
+        // add options to associated select box
+        appendDataToSelect( from, fromData );
+        appendDataToSelect( to, toData );
     
-    // reference to controlling select box
-    var sel = form.elements[ 'conversion_type' ];
-    sel.selectedIndex = 0;
-    
-    // name of assc select box
-    var fromName = 'from_unit[]';
-    var toName = 'to_unit[]';
-    // reference to assc select box
-    var from = form.elements[ fromName ];
-    var to = form.elements[ toName ];
-    
-    // get data for assc select box passing its name
-    // and value of selected in controlling select box
-    var fromData = Conversion_Unit_Lists[ fromName ][ sel.value ];
-    var toData = Conversion_Unit_Lists[ toName ][ sel.value ];
-    
-    // add options to associated select box
-    appendDataToSelect( from, fromData );
-    appendDataToSelect( to, toData );
 };

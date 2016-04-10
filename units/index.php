@@ -84,9 +84,115 @@ $to_value = '';
 
 if( isset( $_POST[ 'submit' ] ) ) {
     
+    $convert_this = @$_POST[ 'conversion_type' ];
     $from_value = $_POST[ 'from_value' ];
-    $from_unit = $_POST[ 'from_unit' ];
-    $to_unit = $_POST[ 'to_unit' ];
+    $from_unit = $_POST[ 'from_unit' ][0];
+    $to_unit = $_POST[ 'to_unit' ][0];
+    
+    switch( $convert_this ) {
+        case 'acceleration':
+            $to_value = convert_acceleration( $from_value, $from_unit, $to_unit );
+            break;
+        case 'angles':
+            $to_value = convert_angles( $from_value, $from_unit, $to_unit );
+            break;
+        case 'area':
+            $to_value = convert_area( $from_value, $from_unit, $to_unit );
+            break;
+        case 'currency':
+            $to_value = convert_currency( $from_value, $from_unit, $to_unit );
+            break;
+        case 'data transfer rate':
+            $to_value = convert_data_transfer( $from_value, $from_unit, $to_unit );
+            break;
+        case 'density':
+            $to_value = convert_density( $from_value, $from_unit, $to_unit );
+            break;
+        case 'digital storage size':
+            $to_value = convert_digital_storage( $from_value, $from_unit, $to_unit );
+            break;
+        case 'electric capacitance':
+            $to_value = convert_electric_cap( $from_value, $from_unit, $to_unit );
+            break;
+        case 'electric charge':
+            $to_value = convert_electric_charge( $from_value, $from_unit, $to_unit );
+            break;
+        case 'electric conductance':
+            $to_value = convert_electric_cond( $from_value, $from_unit, $to_unit );
+            break;
+        case 'electric current':
+            $to_value = convert_electric_curr( $from_value, $from_unit, $to_unit );
+            break;
+        case 'energy':
+            $to_value = convert_energy( $from_value, $from_unit, $to_unit );
+            break;
+        case 'flow rate':
+            $to_value = convert_flow( $from_value, $from_unit, $to_unit );
+            break;
+        case 'force':
+            $to_value = convert_force( $from_value, $from_unit, $to_unit );
+            break;
+        case 'frequency':
+            $to_value = convert_frequency( $from_value, $from_unit, $to_unit );
+            break;
+        case 'fuel economy':
+            $to_value = convert_fuel( $from_value, $from_unit, $to_unit );
+            break;
+        case 'inductance':
+            $to_value = convert_inductance( $from_value, $from_unit, $to_unit );
+            break;
+        case 'length and distance':
+            $to_value = convert_length( $from_value, $from_unit, $to_unit );
+            break;
+        case 'light intensity':
+            $to_value = convert_light( $from_value, $from_unit, $to_unit );
+            break;
+        case 'magnetic flux':
+            $to_value = convert_magnetic( $from_value, $from_unit, $to_unit );
+            break;
+        case 'mass and weight':
+            $to_value = convert_mass( $from_value, $from_unit, $to_unit );
+            break;
+        case 'misc':
+            $to_value = convert_misc( $from_value, $from_unit, $to_unit );
+            break;
+        case 'power':
+            $to_value = convert_power( $from_value, $from_unit, $to_unit );
+            break;
+        case 'pressure':
+            $to_value = convert_pressure( $from_value, $from_unit, $to_unit );
+            break;
+        case 'radiation dosage':
+            $to_value = convert_radiation( $from_value, $from_unit, $to_unit );
+            break;
+        case 'radioactivity':
+            $to_value = convert_radioactivity( $from_value, $from_unit, $to_unit );
+            break;
+        case 'speed':
+            $to_value = convert_speed( $from_value, $from_unit, $to_unit );
+            break;
+        case 'temperature':
+            $to_value = convert_temperature( $from_value, $from_unit, $to_unit );
+            break;
+        case 'time':
+            $to_value = convert_time( $from_value, $from_unit, $to_unit );
+            break;
+        case 'torque':
+            $to_value = convert_torque( $from_value, $from_unit, $to_unit );
+            break;
+        case 'unitless numeric':
+            $to_value = convert_unitless( $from_value, $from_unit, $to_unit );
+            break;
+        case 'voltage':
+            $to_value = convert_voltage( $from_value, $from_unit, $to_unit );
+            break;
+        case 'volume':
+            $to_value = convert_volume( $from_value, $from_unit, $to_unit );
+            break;
+        default:
+            $to_value = 'Unsupported conversion type.';
+    }
+    
     $to_value = convert_area( $from_value, $from_unit, $to_unit );
     
 }
@@ -131,6 +237,9 @@ if( isset( $_POST[ 'submit' ] ) ) {
          * @link: http://stackoverflow.com/questions/22201149/ajax-javascript-select-element-change-on-page-load-in-php
          * @link: http://www.dyn-web.com/tutorials/forms/select/paired.php
          */
+        echo '<pre>';
+        var_dump( $_POST );
+        echo '</pre>';
         ?>
         <form id="conversion-form" action="" method="POST">
             
@@ -197,7 +306,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
         </form><!-- END #converion-form -->
         
     </main>
-
+    
     <!-- <script src="js/list.js" type="text/javascript"></script> -->
     <script src="js/functions.js" type="text/javascript"></script>
 </body>
