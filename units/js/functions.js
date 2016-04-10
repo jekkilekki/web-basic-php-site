@@ -216,7 +216,9 @@ function removeAllOptions( sel, removeGrp ) {
     }
 }
 
-function appendDataToSelect( sel, obj, index='' ) {
+function appendDataToSelect( sel, obj, index=0 ) {
+    // alert( index );
+    
     var f = document.createDocumentFragment();
     var labels = [], group, opts;
     
@@ -262,7 +264,17 @@ function appendDataToSelect( sel, obj, index='' ) {
     
 }
 
-// var selectedOption = '';
+var fromSelected, toSelected = 0;
+
+// function assigned to onchange event of unit select boxes
+var fromSelected = document.forms[ 'conversion-form' ].elements[ 'from_unit[]' ].onchange = function( e ) {
+    fromSelected = this.selectedIndex;
+    alert( fromSelected );
+}
+document.forms[ 'conversion-form' ].elements[ 'to_unit[]' ].onchange = function( e ) {
+    toSelected = this.selectedIndex;
+    alert( toSelected );
+}
 
 // anonymous function assigned to onchange event of controlling select box
 document.forms[ 'conversion-form' ].elements[ 'conversion_type' ].onchange = function( e ) {
@@ -285,9 +297,14 @@ document.forms[ 'conversion-form' ].elements[ 'conversion_type' ].onchange = fun
     appendDataToSelect( fromList, Conversion_Unit_Lists[ fromName ][ this.value ] );
     appendDataToSelect( toList, Conversion_Unit_Lists[ toName ][ this.value ] );
     
+    // which one is selected?
+    //fromList[ fromSelected ].selected = true;
+    //toList[ toIndex ].selected = true;
+    
 };
 
-
+// set default selectedIndexes
+var fromSelected, toSelected = '';
 
 // populate associated select box as page loads
 window.onload = function() { // immediate function to avoid globals
@@ -296,7 +313,7 @@ window.onload = function() { // immediate function to avoid globals
     
         // reference to controlling select box
         var sel = form.elements[ 'conversion_type' ];
-        sel.selectedIndex = selectedOption;
+        //sel.selectedIndex = selectedOption;
 
         // name of assc select box
         var fromName = 'from_unit[]';
@@ -311,7 +328,15 @@ window.onload = function() { // immediate function to avoid globals
         var toData = Conversion_Unit_Lists[ toName ][ sel.value ];
 
         // add options to associated select box
-        appendDataToSelect( from, fromData );
-        appendDataToSelect( to, toData );
+        appendDataToSelect( from, fromData, fromSelected );
+        appendDataToSelect( to, toData, toSelected );
+    
+    
+    var fromSelected = form.elements[ 'from_unit' ].selectedIndex;
+    var toSelected = form.elements[ 'to_unit' ].selectedIndex;
+    
+    // which one is selected?
+    from[ fromSelected ].selected = true;
+    to[ toSelected ].selected = true;
     
 };
