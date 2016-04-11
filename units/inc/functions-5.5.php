@@ -1,6 +1,41 @@
 <?php 
 /*
  * Functions file - handles ALL conversion functions
+ * 
+ * In alphabetical order, the functions found in this file are:
+ *  1. acceleration         convert_acceleration()      * non
+ *  2. angles               convert_angles()            DEFAULT
+ *  3. area                 convert_area()              DEFAULT
+ *  4. currency             convert_currency()          * 
+ *  5. data transfer rate   convert_data_transfer()     DEFAULT
+ *  6. density              convert_density()           * non
+ *  7. digital storage size convert_digital_storage()   DEFAULT
+ *  8. electric capacitance convert_electric_cap()      *
+ *  9. electric charge      convert_electric_charge()   *
+ * 10. electric conductance convert_electric_cond()     *
+ * 11. electric current     convert_electric_curr()     *
+ * 12. energy               convert_energy()            DEFAULT
+ * 13. flow rate            convert_flow()              *
+ * 14. force                convert_force()             *
+ * 15. frequency            convert_frequency()         DEFAULT
+ * 16. fuel economy         convert_fuel()              DEFAULT
+ * 17. inductance           convert_inductance()        *
+ * 18. length and distance  convert_length()            DEFAULT
+ * 19. light intensity      convert_light()             *
+ * 20. magnetic flux        convert_magnetic()          *
+ * 21. mass and weight      convert_mass()              DEFAULT
+ * 22. misc                 convert_misc()              *
+ * 23. power                convert_power()             *
+ * 24. pressure             convert_pressure()          DEFAULT
+ * 25. radiation dosage     convert_radiation()         *
+ * 26. radioactivity        convert_radioactivity()     *
+ * 27. speed                convert_speed()             DEFAULT
+ * 28. temperature          convert_temperature()       DEFAULT
+ * 29. time                 convert_time()              DEFAULT
+ * 30. torque               convert_torque()            * non
+ * 31. unitless numeric     convert_unitless()          *
+ * 32. voltage              convert_voltage()           *
+ * 33. volume               convert_volume()            DEFAULT
  */
 
 /*
@@ -40,7 +75,7 @@ function float_to_string( $float, $precision=10 ) {
 /*
  * =================================================================================
  *
- * LENGTH conversions
+ * #1 : LENGTH conversions
  * Use METERS as common unit - convert ALL to meters, then convert to specified unit
  *
  * =================================================================================
@@ -58,27 +93,102 @@ $length_to_meter = array(
     'kilometers'            => 1000,
     'astronomical_units'    => 149600000000,
     'light-years'           => 9461000000000000,
+    'light-days'            => 25900000000000,
+    'light-hours'           => 1079000000000,
+    'light-minutes'         => 17990000000,
+    'light-seconds'         => 299800000,
     'parsecs'               => 30860000000000000,
     'fathoms'               => 1.8288,
-    'cables_international'  => 185.2,
-    'cables_us'             => 219.456,
+    'international_cables'  => 185.2,
+    'Imperial_cables'       => 185.318,
+    'US_cables'             => 219.456,
     'nautical_miles'        => 1852,
     'leagues'               => 5556,
     'links'                 => 0.201168,
     'rods'                  => 5.0292,
     'chains'                => 20.1168,
     'furlongs'              => 201.168,
-    // Area
-    'acres'                 => 63.6149072341,   // sqrt(4046.8564224) - it will be squared in the function
+    
+    // Area - take the sqrt as it will be squared in the function
+    'acres'                 => 63.6149072341,   // sqrt(4046.8564224) 
+    //'ares'                  => , // sqrt()
+    //'barns'                 => , // sqrt()
+    //'cricket_pitches'       => , // sqrt()
+    //'dunams'                => , // sqrt()
+    //'football_fields'       => , // sqrt()
+    //'football_pitches'      => , // sqrt()
     'hectares'              => 100,             // sqrt(10000)
+    //'pings'                 => , // sqrt()
+    //'Planck areas'          => , // sqrt()
     'pyoung-ko'             => 1.81818590909,   // sqrt(3.3058)
-    // Silly Units
+    //'sections'              => , // sqrt()
+    //'stokes'                => , // sqrt()
+    //'survey_townships'      => , // sqrt()
+    
+    // Unusual Units
     // http://io9.gizmodo.com/5827925/ten-unbelievably-strange-units-of-measurement
     // https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement#Length
     // http://www.kylesconverter.com/length/
+    'angstroms'             => 0.0000000001,
+    'ATA_picas'             => 0.004217,
+    //'ATA_points'            => ,
     'attoparsec'            => 0.03086,
-    'beard-seconds'         => 0.000000005,     
-    'Smoots'                => 1.7018,   
+    'beard-seconds'         => 0.000000005, 
+    'Ciceros'               => 0.00451167,
+    'cubits'                => 0.4572,
+    //'Didot_points'          => ,
+    'English_ells'          => 1.143,
+    'Flemish_ells'          => 0.686,
+    'French_ells'           => 1.372,
+    'Polish_ells'           => 0.787, // new
+    'Danish_ells'           => 0.635, // new
+    'Swedish_alns'          => 0.59,  // new
+    'German_ells'           => 0.579, // new
+    'Scottish_ells'         => 0.94,
+    //'Half_Ironman_Triathlon_bikes'  => ,
+    //'Half_Ironman_Triathlon_runs'   => ,
+    //'Half_Ironman_Triathlon_swims'  => ,
+    //'Half_Ironman_Triathlons'       => ,
+    'hands'                 => 0.1016,
+    //'IN_picas'              => ,
+    //'IN_points'             => ,
+    //'indoor_track_lengths'  => , 
+    //'Ironman_Triathlon_bikes'       => ,
+    //'Ironman_Triathlon_runs'        => ,
+    //'Ironman_Triathlon_swims'       => ,
+    //'Ironman_Triathlons'            => ,
+    'itinerary_stadions'    => 157,
+    'Ptolemaic_stadions'    => 185,
+    'Attic_stadions'        => 185,
+    'Babylonian_stadions'   => 196,
+    'Persian_stadions'      => 196,
+    'Phoenician_stadions'   => 209,
+    'Egyptian_stadions'     => 209,
+    'marathons'             => 42195,
+    'microns'               => 0.000001, 
+    //'nails'                 => , 
+    //'Olympic_pools'         => ,
+    'Olympic_stadions'      => 176,
+    //'Olympic_Triathlon_bikes'       => ,
+    //'Olympic_Triathlon_runs'        => ,
+    //'Olympic_Triathlon_swims'       => ,
+    //'Olympic_Triathlons'            => ,
+    //'outdoor_track_lengths' => ,
+    //'PostScript_picas'      => ,
+    //'PostScript_points'     => ,
+    //'Rack_units'            => ,
+    //'Short_Course_pools'    => ,
+    'smoots'                => 1.7018,
+    'spans'                 => 0.2286,
+    //'Sprint_Triathlon_bikes'        => ,
+    //'Sprint_Triathlon_runs'         => ,
+    //'Sprint_Triathlon_swims'        => ,
+    //'Sprint_Triathlons'             => ,
+    //'TeX_picas'             => ,
+    //'TeX_points'            => ,
+    'thou'                 => 0.0000254,
+    //'Truchet_picas'         => ,
+    //'Truchet_points'        => ,
     'Mickeys'               => 0.000127,
     'Altuves'               => 1.65,
     'sheppies'              => 1400,

@@ -53,7 +53,8 @@ var Conversion_Unit_Lists = {
             text: [ 'henries' ],
         },
         length_and_distance: {
-            text: [ 'angstrom', 'Astronomical Units', 'ATA picas', 'ATA points', 'beard-seconds', 'chains', 'Ciceros', 'cubits', 'Didot points', 'English ells', 'fathoms', 'feet' , 'Flemish ells', 'football fields', 'football pitches', 'French ells', 'furlongs', 'Half Ironman Triathlon bikes', 'Half Ironman Triathlon runs', 'Half Ironman Triathlon swims', 'Half Ironman Triathlons', 'hands', 'Imperial cables', 'IN picas', 'IN Points', 'inches', 'indoor track lengths', 'international cables', 'Ironman Triathlon bikes', 'Ironman Triathlon runs', 'Ironman Triathlon swims', 'Ironman Triathlons', 'itinerary stadions', 'kilometers', 'Kpc', 'length of cricket pitches', 'light-days', 'light-hours', 'light-minutes', 'light-seconds', 'light-years', 'marathons', 'meters', 'metres', 'metres', 'microns', 'miles', 'Mpc', 'nails', 'nautical leagues', 'nautical miles', 'Olympic Pools', 'Olympic stadion', 'Olympic Triathlon bikes', 'Olympic Triathlon runs', 'Olympic Triathlon swims', 'Olympic Triathlons', 'outdoor track lengths', 'Parsecs', 'Planck Lengths', 'PostScript picas', 'PostScript points', 'Rack units', 'rods', 'Scottish ells', 'Short Course Pools', 'smoots', 'spans', 'Sprint Triathlon bikes', 'Sprint Triathlon runs', 'Sprint Triathlon swims', 'Sprint Triathlons', 'TeX picas', 'TeX points', 'thou', 'Truchet picas', 'Truchet points', 'US cables', 'yards' ],
+            text: [ 'angstrom', 'Astronomical Units', 'ATA picas', 'ATA points', 'beard-seconds', 'chains', 'centimeters', 'Ciceros', 'cubits', 'Didot points', 'English ells', 'fathoms', 'feet' , 'Flemish ells', 'football fields', 'football pitches', 'French ells', 'furlongs', 'Half Ironman Triathlon bikes', 'Half Ironman Triathlon runs', 'Half Ironman Triathlon swims', 'Half Ironman Triathlons', 'hands', 'Imperial cables', 'IN picas', 'IN Points', 'inches', 'indoor track lengths', 'international cables', 'Ironman Triathlon bikes', 'Ironman Triathlon runs', 'Ironman Triathlon swims', 'Ironman Triathlons', 'itinerary stadions', 'kilometers', 'cricket pitches', 'light-days', 'light-hours', 'light-minutes', 'light-seconds', 'light-years', 'marathons', 'meters', 'microns', 'miles', 'nails', 'nautical leagues', 'nautical miles', 'Olympic Pools', 'Olympic stadions', 'Olympic Triathlon bikes', 'Olympic Triathlon runs', 'Olympic Triathlon swims', 'Olympic Triathlons', 'outdoor track lengths', 'Parsecs', 'Planck Lengths', 'PostScript picas', 'PostScript points', 'Rack units', 'rods', 'Scottish ells', 'Short Course Pools', 'smoots', 'spans', 'Sprint Triathlon bikes', 'Sprint Triathlon runs', 'Sprint Triathlon swims', 'Sprint Triathlons', 'TeX picas', 'TeX points', 'thou', 'Truchet picas', 'Truchet points', 'US cables', 'yards' ],
+            default: [ 'kilometers', 'meters', 'centimeters', 'millimeters',  ],
         },
         light_intensity: {
             text: [ 'candelas', 'footcandles', 'lamberts', 'lumens', 'lux' ],
@@ -149,7 +150,7 @@ var Conversion_Unit_Lists = {
             text: [ 'henries' ],
         },
         length_and_distance: {
-            text: [ 'angstrom', 'Astronomical Units', 'ATA picas', 'ATA points', 'beard-seconds', 'chains', 'Ciceros', 'cubits', 'Didot points', 'English ells', 'fathoms', 'feet' , 'Flemish ells', 'football fields', 'football pitches', 'French ells', 'furlongs', 'Half Ironman Triathlon bikes', 'Half Ironman Triathlon runs', 'Half Ironman Triathlon swims', 'Half Ironman Triathlons', 'hands', 'Imperial cables', 'IN picas', 'IN Points', 'inches', 'indoor track lengths', 'international cables', 'Ironman Triathlon bikes', 'Ironman Triathlon runs', 'Ironman Triathlon swims', 'Ironman Triathlons', 'itinerary stadions', 'kilometers', 'Kpc', 'length of cricket pitches', 'light-days', 'light-hours', 'light-minutes', 'light-seconds', 'light-years', 'marathons', 'meters', 'metres', 'metres', 'microns', 'miles', 'Mpc', 'nails', 'nautical leagues', 'nautical miles', 'Olympic Pools', 'Olympic stadion', 'Olympic Triathlon bikes', 'Olympic Triathlon runs', 'Olympic Triathlon swims', 'Olympic Triathlons', 'outdoor track lengths', 'Parsecs', 'Planck Lengths', 'PostScript picas', 'PostScript points', 'Rack units', 'rods', 'Scottish ells', 'Short Course Pools', 'smoots', 'spans', 'Sprint Triathlon bikes', 'Sprint Triathlon runs', 'Sprint Triathlon swims', 'Sprint Triathlons', 'TeX picas', 'TeX points', 'thou', 'Truchet picas', 'Truchet points', 'US cables', 'yards' ],
+            text: [ 'angstrom', 'Astronomical Units', 'ATA picas', 'ATA points', 'beard-seconds', 'chains', 'centimeters', 'Ciceros', 'cubits', 'Didot points', 'English ells', 'fathoms', 'feet' , 'Flemish ells', 'football fields', 'football pitches', 'French ells', 'furlongs', 'Half Ironman Triathlon bikes', 'Half Ironman Triathlon runs', 'Half Ironman Triathlon swims', 'Half Ironman Triathlons', 'hands', 'Imperial cables', 'IN picas', 'IN Points', 'inches', 'indoor track lengths', 'international cables', 'Ironman Triathlon bikes', 'Ironman Triathlon runs', 'Ironman Triathlon swims', 'Ironman Triathlons', 'itinerary stadions', 'kilometers', 'Kpc', 'length of cricket pitches', 'light-days', 'light-hours', 'light-minutes', 'light-seconds', 'light-years', 'marathons', 'meters', 'metres', 'metres', 'microns', 'miles', 'Mpc', 'nails', 'nautical leagues', 'nautical miles', 'Olympic Pools', 'Olympic stadion', 'Olympic Triathlon bikes', 'Olympic Triathlon runs', 'Olympic Triathlon swims', 'Olympic Triathlons', 'outdoor track lengths', 'Parsecs', 'Planck Lengths', 'PostScript picas', 'PostScript points', 'Rack units', 'rods', 'Scottish ells', 'Short Course Pools', 'smoots', 'spans', 'Sprint Triathlon bikes', 'Sprint Triathlon runs', 'Sprint Triathlon swims', 'Sprint Triathlons', 'TeX picas', 'TeX points', 'thou', 'Truchet picas', 'Truchet points', 'US cables', 'yards' ],
         },
         light_intensity: {
             text: [ 'candelas', 'footcandles', 'lamberts', 'lumens', 'lux' ],
@@ -216,7 +217,7 @@ function removeAllOptions( sel, removeGrp ) {
     }
 }
 
-function appendDataToSelect( sel, obj, index=0 ) {
+function appendDataToSelect( sel, obj, str="" ) {
     // alert( index );
     
     var f = document.createDocumentFragment();
@@ -233,8 +234,7 @@ function appendDataToSelect( sel, obj, index=0 ) {
             if( obj.value ) {
                 o.value = obj.value[ i ];
             }
-            
-            if( i == index ) {
+            if( obj.text[i] == str ) {
                 o.selected = true;
             }
             
@@ -264,16 +264,24 @@ function appendDataToSelect( sel, obj, index=0 ) {
     
 }
 
-var fromSelected, toSelected = 0;
+var fromSelected = document.getElementById( 'from-units' ).innerHTML;
+var toSelected = document.getElementById( 'to-units' ).innerHTML;
+
+fromSelected = fromSelected.replace( 'From: ', '' );
+toSelected = toSelected.replace( 'To: ', '' );
 
 // function assigned to onchange event of unit select boxes
-var fromSelected = document.forms[ 'conversion-form' ].elements[ 'from_unit[]' ].onchange = function( e ) {
-    fromSelected = this.selectedIndex;
-    alert( fromSelected );
+document.forms[ 'conversion-form' ].elements[ 'from_unit[]' ].onchange = function( e ) {
+    if( fromSelected != this.selectedIndex ) {
+        fromSelected = this.selectedIndex;
+        //alert( fromSelected );
+    }
 }
 document.forms[ 'conversion-form' ].elements[ 'to_unit[]' ].onchange = function( e ) {
-    toSelected = this.selectedIndex;
-    alert( toSelected );
+    if( toSelected != this.selectedIndex ) {
+        toSelected = this.selectedIndex;
+        //alert( toSelected );
+    }
 }
 
 // anonymous function assigned to onchange event of controlling select box
@@ -297,14 +305,7 @@ document.forms[ 'conversion-form' ].elements[ 'conversion_type' ].onchange = fun
     appendDataToSelect( fromList, Conversion_Unit_Lists[ fromName ][ this.value ] );
     appendDataToSelect( toList, Conversion_Unit_Lists[ toName ][ this.value ] );
     
-    // which one is selected?
-    //fromList[ fromSelected ].selected = true;
-    //toList[ toIndex ].selected = true;
-    
 };
-
-// set default selectedIndexes
-var fromSelected, toSelected = '';
 
 // populate associated select box as page loads
 window.onload = function() { // immediate function to avoid globals
@@ -330,13 +331,5 @@ window.onload = function() { // immediate function to avoid globals
         // add options to associated select box
         appendDataToSelect( from, fromData, fromSelected );
         appendDataToSelect( to, toData, toSelected );
-    
-    
-    var fromSelected = form.elements[ 'from_unit' ].selectedIndex;
-    var toSelected = form.elements[ 'to_unit' ].selectedIndex;
-    
-    // which one is selected?
-    from[ fromSelected ].selected = true;
-    to[ toSelected ].selected = true;
     
 };

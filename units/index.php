@@ -1,4 +1,6 @@
 <?php
+// Another excellent conversion chart http://m.convert-me.com/en/convert/length/picaata.html
+
 /**
  * Primary Measures
  *  - Length / distance
@@ -39,38 +41,38 @@ $convert_options = array(
 );
 // https://support.google.com/websearch/answer/3284611?hl=en-KR#unitconverter
 $full_convert_options = array(
-    'acceleration',
-    'angles',
+    //'acceleration',
+    //'angles',
     'area',
-    'currency',
-    'data transfer rate',
-    'density',
-    'digital storage size',
-    'electric capacitance',
-    'electric charge',
-    'electric conductance',
-    'electric current',
-    'energy',
-    'flow rate',
-    'force',
-    'frequency',
-    'fuel economy',
-    'inductance',
+    //'currency',
+    //'data transfer rate',
+    //'density',
+    //'digital storage size',
+    //'electric capacitance',
+    //'electric charge',
+    //'electric conductance',
+    //'electric current',
+    //'energy',
+    //'flow rate',
+    //'force',
+    //'frequency',
+    //'fuel economy',
+    //'inductance',
     'length and distance',
-    'light intensity',
-    'magnetic flux',
+    //'light intensity',
+    //'magnetic flux',
     'mass and weight',
-    'misc',
-    'power',
-    'pressure',
-    'radiation dosage',
-    'radioactivity',
+    //'misc',
+    //'power',
+    //'pressure',
+    //'radiation dosage',
+    //'radioactivity',
     'speed',
     'temperature',
-    'time',
-    'torque',
-    'unitless numeric',
-    'voltage',
+    //'time',
+    //'torque',
+    //'unitless numeric',
+    //'voltage',
     'volume',
 );
 
@@ -218,15 +220,15 @@ if( isset( $_POST[ 'submit' ] ) ) {
 <!--            <li><a href="view/mass.php">Mass</a></li>-->
 <!--            <li><a href="view/speed.php">Speed</a></li>-->
 <!--            <li><a href="view/temperature.php">Temperature</a></li>-->
-            <li><a href="view/acceleration.php">Acceleration</a></li>
-            <li><a href="view/density.php">Density</a></li>
+<!--            <li><a href="view/acceleration.php">Acceleration</a></li>-->
+<!--            <li><a href="view/density.php">Density</a></li>-->
 <!--            <li><a href="view/energy.php">Energy</a></li>-->
 <!--            <li><a href="view/force.php">Force</a></li>-->
 <!--            <li><a href="view/frequency.php">Frequency</a></li>-->
 <!--            <li><a href="view/light.php">Light</a></li>-->
 <!--            <li><a href="view/power.php">Power</a></li>-->
 <!--            <li><a href="view/pressure.php">Pressure</a></li>-->
-            <li><a href="view/torque.php">Torque</a></li>
+<!--            <li><a href="view/torque.php">Torque</a></li>-->
         </ul>
         
         <?php
@@ -269,6 +271,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
             
             <div id="conversion-units">
                 <div class="entry">
+                    <p id="from-units"><?= "From: $from_unit"; ?></p>
                     <input type="text" name="from_value" value="<?= $from_value; ?>">
                     <select name="from_unit[]">
 
@@ -285,6 +288,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
                 </div>
                 <span id="equal-sign">=</span>
                 <div class="entry">
+                    <p id="to-units"><?= "To: $to_unit"; ?></p>
                     <input type="text" name="to_value" value="<?= float_to_string( $to_value ); ?>">
                     <select name="to_unit[]">
 
