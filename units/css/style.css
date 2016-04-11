@@ -36,7 +36,20 @@ main {
     margin-bottom: 10px;
 }
 #conversion-type select {
-    width: 430px;
+    width: 440px;
+    border-radius: 0 0 2px 2px;
+    margin-top: -1px;
+    display: block;
+}
+#convert_string {
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid silver;
+    font-size: 120%;
+    height: 40px;
+    padding: 1px 6px;
+    border-radius: 2px 2px 0 0;
+    width: 440px;
+    display: block;
 }
 #conversion-units {
     padding-top: 10px;
@@ -65,7 +78,7 @@ main {
 #conversion-units #equal-sign {
     display: inline-block;
     line-height: 44px;
-    width: 27px;
+    width: 40px;
     text-align: center;
     font-size: 26px;
     color: #878787;

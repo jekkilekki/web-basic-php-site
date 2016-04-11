@@ -230,7 +230,7 @@ function convert_length( $value, $from_unit, $to_unit ) {
  */
 function x_to_sq_meters( $value, $from_unit ) {
     global $length_to_meter;
-    $from_unit = str_replace( 'square_', '', $from_unit );
+    $from_unit = str_replace( 'square ', '', $from_unit );
     if( array_key_exists( $from_unit, $length_to_meter ) ) {
         return $value * pow( $length_to_meter[ $from_unit ], 2 );
     } else {
@@ -240,7 +240,7 @@ function x_to_sq_meters( $value, $from_unit ) {
 
 function x_from_sq_meters( $value, $to_unit ) {
     global $length_to_meter;
-    $to_unit = str_replace( 'sq_', '', $to_unit );
+    $to_unit = str_replace( 'square ', '', $to_unit );
     if( array_key_exists( $to_unit, $length_to_meter ) ) {
         return $value / pow( $length_to_meter[ $to_unit ], 2 );
     } else {
@@ -263,24 +263,24 @@ function convert_area( $value, $from_unit, $to_unit ) {
  * =================================================================================
  */
 $volume_to_liter = array(
-    'cubic_inches'          => 0.0163871,
-    'cubic_feet'            => 28.3168,
-    'cubic_centimeters'     => 0.001,
-    'cubic_meters'          => 1000,
-    'imperial_gallons'      => 4.54609,
-    'imperial_quarts'       => 1.13652,
-    'imperial_pints'        => 0.568261,
-    'imperial_cups'         => 0.284131,
-    'imperial_ounces'       => 0.0284131,
-    'imperial_tablespoons'  => 0.0177582,
-    'imperial_teaspoons'    => 0.00591939,
-    'us_gallons'            => 3.78541,
-    'us_quarts'             => 0.946353,
-    'us_pints'              => 0.473176,
-    'us_cups'               => 0.24,
-    'us_ounces'             => 0.0295735,
-    'us_tablespoons'        => 0.0147868,
-    'us_teaspoons'          => 0.00492892,
+    'cubic inches'          => 0.0163871,
+    'cubic feet'            => 28.3168,
+    'cubic centimeters'     => 0.001,
+    'cubic meters'          => 1000,
+    'imperial gallons'      => 4.54609,
+    'imperial quarts'       => 1.13652,
+    'imperial pints'        => 0.568261,
+    'imperial cups'         => 0.284131,
+    'imperial ounces'       => 0.0284131,
+    'imperial tablespoons'  => 0.0177582,
+    'imperial teaspoons'    => 0.00591939,
+    'us gallons'            => 3.78541,
+    'us quarts'             => 0.946353,
+    'us pints'              => 0.473176,
+    'us cups'               => 0.24,
+    'us ounces'             => 0.0295735,
+    'us tablespoons'        => 0.0147868,
+    'us teaspoons'          => 0.00492892,
     'liters'                => 1,
     'milliliters'           => 0.001,
 );
@@ -371,11 +371,11 @@ function convert_speed( $value, $from_unit, $to_unit ) {
     if( $from_unit == 'knots' ) { $from_unit = 'nautical_miles_per_hour'; }
     if( $to_unit == 'knots' ) { $to_unit = 'nautical_miles_per_hour'; } 
     
-    list( $from_dist, $from_time ) = explode( '_per_', $from_unit );
-    list( $to_dist, $to_time ) = explode( '_per_', $to_unit );
+    list( $from_dist, $from_time ) = explode( ' per ', $from_unit );
+    list( $to_dist, $to_time ) = explode( ' per ', $to_unit );
     
     if( $from_time == 'hour' ) { $value /= 3600; }
-    $value = convert_length( $value, $from_dist, $to_dist );
+    $new_value = convert_length( $value, $from_dist, $to_dist );
     if( $to_time == 'hour' ) { $value *= 3600; }
     
     return $new_value;
@@ -408,6 +408,8 @@ function x_from_celsius( $value, $to_unit ) {
 }
 
 function convert_temperature( $value, $from_unit, $to_unit ) {
+    $from_unit = strtolower( $from_unit );
+    $to_unit = strtolower( $to_unit );
     $temp_value = x_to_celsius( $value, $from_unit );
     $new_value = x_from_celsius( $temp_value, $to_unit );
     return $new_value;

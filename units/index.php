@@ -77,6 +77,7 @@ $full_convert_options = array(
 );
 
 $convert_this = '';
+$convert_string = '';
 
 // Set defaults
 $from_value = '';
@@ -86,10 +87,14 @@ $to_value = '';
 
 if( isset( $_POST[ 'submit' ] ) ) {
     
-    $convert_this = @$_POST[ 'conversion_type' ];
+    //$convert_this = optionize( $_POST[ 'conversion_type' ] );
+    $convert_this = $_POST[ 'conversion_type' ];
+    $convert_string = $_POST[ 'convert_string' ];
     $from_value = $_POST[ 'from_value' ];
     $from_unit = $_POST[ 'from_unit' ][0];
     $to_unit = $_POST[ 'to_unit' ][0];
+    
+    echo '<script>alert(' . $convert_this . ');</script>';
     
     switch( $convert_this ) {
         case 'acceleration':
@@ -104,31 +109,31 @@ if( isset( $_POST[ 'submit' ] ) ) {
         case 'currency':
             $to_value = convert_currency( $from_value, $from_unit, $to_unit );
             break;
-        case 'data transfer rate':
+        case 'data_transfer_rate':
             $to_value = convert_data_transfer( $from_value, $from_unit, $to_unit );
             break;
         case 'density':
             $to_value = convert_density( $from_value, $from_unit, $to_unit );
             break;
-        case 'digital storage size':
+        case 'digital_storage_size':
             $to_value = convert_digital_storage( $from_value, $from_unit, $to_unit );
             break;
-        case 'electric capacitance':
+        case 'electric_capacitance':
             $to_value = convert_electric_cap( $from_value, $from_unit, $to_unit );
             break;
-        case 'electric charge':
+        case 'electric_charge':
             $to_value = convert_electric_charge( $from_value, $from_unit, $to_unit );
             break;
-        case 'electric conductance':
+        case 'electric_conductance':
             $to_value = convert_electric_cond( $from_value, $from_unit, $to_unit );
             break;
-        case 'electric current':
+        case 'electric_current':
             $to_value = convert_electric_curr( $from_value, $from_unit, $to_unit );
             break;
         case 'energy':
             $to_value = convert_energy( $from_value, $from_unit, $to_unit );
             break;
-        case 'flow rate':
+        case 'flow_rate':
             $to_value = convert_flow( $from_value, $from_unit, $to_unit );
             break;
         case 'force':
@@ -137,22 +142,22 @@ if( isset( $_POST[ 'submit' ] ) ) {
         case 'frequency':
             $to_value = convert_frequency( $from_value, $from_unit, $to_unit );
             break;
-        case 'fuel economy':
+        case 'fuel_economy':
             $to_value = convert_fuel( $from_value, $from_unit, $to_unit );
             break;
         case 'inductance':
             $to_value = convert_inductance( $from_value, $from_unit, $to_unit );
             break;
-        case 'length and distance':
+        case 'length_and_distance':
             $to_value = convert_length( $from_value, $from_unit, $to_unit );
             break;
-        case 'light intensity':
+        case 'light_intensity':
             $to_value = convert_light( $from_value, $from_unit, $to_unit );
             break;
-        case 'magnetic flux':
+        case 'magnetic_flux':
             $to_value = convert_magnetic( $from_value, $from_unit, $to_unit );
             break;
-        case 'mass and weight':
+        case 'mass_and_weight':
             $to_value = convert_mass( $from_value, $from_unit, $to_unit );
             break;
         case 'misc':
@@ -164,7 +169,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
         case 'pressure':
             $to_value = convert_pressure( $from_value, $from_unit, $to_unit );
             break;
-        case 'radiation dosage':
+        case 'radiation_dosage':
             $to_value = convert_radiation( $from_value, $from_unit, $to_unit );
             break;
         case 'radioactivity':
@@ -182,7 +187,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
         case 'torque':
             $to_value = convert_torque( $from_value, $from_unit, $to_unit );
             break;
-        case 'unitless numeric':
+        case 'unitless_numeric':
             $to_value = convert_unitless( $from_value, $from_unit, $to_unit );
             break;
         case 'voltage':
@@ -195,7 +200,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
             $to_value = 'Unsupported conversion type.';
     }
     
-    $to_value = convert_area( $from_value, $from_unit, $to_unit );
+    // $to_value = convert_area( $from_value, $from_unit, $to_unit );
     
 }
 ?>
@@ -246,6 +251,8 @@ if( isset( $_POST[ 'submit' ] ) ) {
         <form id="conversion-form" action="" method="POST">
             
             <div id="conversion-type">
+                <p></p>
+                <input type="text" id="convert_string" name="convert_string" value="<?= $convert_string; ?>">
                 <select name="conversion_type">
                     
                     <?php
