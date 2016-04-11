@@ -100,8 +100,8 @@ $length_to_meter = array(
     'parsecs'               => 30860000000000000,
     'fathoms'               => 1.8288,
     'international_cables'  => 185.2,
-    'Imperial_cables'       => 185.318,
-    'US_cables'             => 219.456,
+    'imperial_cables'       => 185.318,
+    'us_cables'             => 219.456,
     'nautical_miles'        => 1852,
     'leagues'               => 5556,
     'links'                 => 0.201168,
@@ -130,21 +130,21 @@ $length_to_meter = array(
     // https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement#Length
     // http://www.kylesconverter.com/length/
     'angstroms'             => 0.0000000001,
-    'ATA_picas'             => 0.004217,
+    'ata_picas'             => 0.004217,
     //'ATA_points'            => ,
     'attoparsec'            => 0.03086,
     'beard-seconds'         => 0.000000005, 
-    'Ciceros'               => 0.00451167,
+    'ciceros'               => 0.00451167,
     'cubits'                => 0.4572,
     //'Didot_points'          => ,
-    'English_ells'          => 1.143,
-    'Flemish_ells'          => 0.686,
-    'French_ells'           => 1.372,
-    'Polish_ells'           => 0.787, // new
-    'Danish_ells'           => 0.635, // new
-    'Swedish_alns'          => 0.59,  // new
-    'German_ells'           => 0.579, // new
-    'Scottish_ells'         => 0.94,
+    'english_ells'          => 1.143,
+    'flemish_ells'          => 0.686,
+    'french_ells'           => 1.372,
+    'polish_ells'           => 0.787, // new
+    'danish_ells'           => 0.635, // new
+    'swedish_alns'          => 0.59,  // new
+    'german_ells'           => 0.579, // new
+    'scottish_ells'         => 0.94,
     //'Half_Ironman_Triathlon_bikes'  => ,
     //'Half_Ironman_Triathlon_runs'   => ,
     //'Half_Ironman_Triathlon_swims'  => ,
@@ -158,17 +158,17 @@ $length_to_meter = array(
     //'Ironman_Triathlon_swims'       => ,
     //'Ironman_Triathlons'            => ,
     'itinerary_stadions'    => 157,
-    'Ptolemaic_stadions'    => 185,
-    'Attic_stadions'        => 185,
-    'Babylonian_stadions'   => 196,
-    'Persian_stadions'      => 196,
-    'Phoenician_stadions'   => 209,
-    'Egyptian_stadions'     => 209,
+    'ptolemaic_stadions'    => 185,
+    'attic_stadions'        => 185,
+    'babylonian_stadions'   => 196,
+    'persian_stadions'      => 196,
+    'phoenician_stadions'   => 209,
+    'egyptian_stadions'     => 209,
     'marathons'             => 42195,
     'microns'               => 0.000001, 
     //'nails'                 => , 
     //'Olympic_pools'         => ,
-    'Olympic_stadions'      => 176,
+    'olympic_stadions'      => 176,
     //'Olympic_Triathlon_bikes'       => ,
     //'Olympic_Triathlon_runs'        => ,
     //'Olympic_Triathlon_swims'       => ,
@@ -189,8 +189,8 @@ $length_to_meter = array(
     'thou'                 => 0.0000254,
     //'Truchet_picas'         => ,
     //'Truchet_points'        => ,
-    'Mickeys'               => 0.000127,
-    'Altuves'               => 1.65,
+    'mickeys'               => 0.000127,
+    'altuves'               => 1.65,
     'sheppies'              => 1400,
     'wiffles'               => 0.089,
     
@@ -263,24 +263,24 @@ function convert_area( $value, $from_unit, $to_unit ) {
  * =================================================================================
  */
 $volume_to_liter = array(
-    'cubic inches'          => 0.0163871,
-    'cubic feet'            => 28.3168,
-    'cubic centimeters'     => 0.001,
-    'cubic meters'          => 1000,
-    'imperial gallons'      => 4.54609,
-    'imperial quarts'       => 1.13652,
-    'imperial pints'        => 0.568261,
-    'imperial cups'         => 0.284131,
-    'imperial ounces'       => 0.0284131,
-    'imperial tablespoons'  => 0.0177582,
-    'imperial teaspoons'    => 0.00591939,
-    'us gallons'            => 3.78541,
-    'us quarts'             => 0.946353,
-    'us pints'              => 0.473176,
-    'us cups'               => 0.24,
-    'us ounces'             => 0.0295735,
-    'us tablespoons'        => 0.0147868,
-    'us teaspoons'          => 0.00492892,
+    'cubic_inches'          => 0.0163871,
+    'cubic_feet'            => 28.3168,
+    'cubic_centimeters'     => 0.001,
+    'cubic_meters'          => 1000,
+    'imperial_gallons'      => 4.54609,
+    'imperial_quarts'       => 1.13652,
+    'imperial_pints'        => 0.568261,
+    'imperial_cups'         => 0.284131,
+    'imperial_ounces'       => 0.0284131,
+    'imperial_tablespoons'  => 0.0177582,
+    'imperial_teaspoons'    => 0.00591939,
+    'us_gallons'            => 3.78541,
+    'us_quarts'             => 0.946353,
+    'us_pints'              => 0.473176,
+    'us_cups'               => 0.24,
+    'us_ounces'             => 0.0295735,
+    'us_tablespoons'        => 0.0147868,
+    'us_teaspoons'          => 0.00492892,
     'liters'                => 1,
     'milliliters'           => 0.001,
 );
@@ -371,8 +371,8 @@ function convert_speed( $value, $from_unit, $to_unit ) {
     if( $from_unit == 'knots' ) { $from_unit = 'nautical_miles_per_hour'; }
     if( $to_unit == 'knots' ) { $to_unit = 'nautical_miles_per_hour'; } 
     
-    list( $from_dist, $from_time ) = explode( ' per ', $from_unit );
-    list( $to_dist, $to_time ) = explode( ' per ', $to_unit );
+    list( $from_dist, $from_time ) = explode( '_per_', $from_unit );
+    list( $to_dist, $to_time ) = explode( '_per_', $to_unit );
     
     if( $from_time == 'hour' ) { $value /= 3600; }
     $new_value = convert_length( $value, $from_dist, $to_dist );
@@ -408,8 +408,6 @@ function x_from_celsius( $value, $to_unit ) {
 }
 
 function convert_temperature( $value, $from_unit, $to_unit ) {
-    $from_unit = strtolower( $from_unit );
-    $to_unit = strtolower( $to_unit );
     $temp_value = x_to_celsius( $value, $from_unit );
     $new_value = x_from_celsius( $temp_value, $to_unit );
     return $new_value;

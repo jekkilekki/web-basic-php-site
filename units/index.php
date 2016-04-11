@@ -23,6 +23,14 @@
 ini_set('display_errors', 1);
 require_once( 'inc/functions-5.5.php' );
 
+$basic_options = array( 
+    'area',
+    'length and distance',
+    'mass and weight',
+    'speed',
+    'temperature',
+    'volume',
+);
 $convert_options = array(
     'angles',
     'area',
@@ -81,7 +89,9 @@ $convert_string = '';
 
 // Set defaults
 $from_value = '';
+$from_unit_str = '';
 $from_unit = '';
+$to_unit_str = '';
 $to_unit = '';
 $to_value = '';
 
@@ -91,10 +101,14 @@ if( isset( $_POST[ 'submit' ] ) ) {
     $convert_this = $_POST[ 'conversion_type' ];
     $convert_string = $_POST[ 'convert_string' ];
     $from_value = $_POST[ 'from_value' ];
-    $from_unit = $_POST[ 'from_unit' ][0];
-    $to_unit = $_POST[ 'to_unit' ][0];
     
-    echo '<script>alert(' . $convert_this . ');</script>';
+    // These variables maintain spaces and capitalization for output later
+    $from_unit_str = $_POST[ 'from_unit' ][0];
+    $to_unit_str = $_POST[ 'to_unit' ][0];
+    
+    // These variables replace spaces with underscores and lowercase everything to be sent to the functions
+    $from_unit = optionize( $from_unit_str );
+    $to_unit = optionize( $to_unit_str );
     
     switch( $convert_this ) {
         case 'acceleration':
@@ -211,12 +225,13 @@ if( isset( $_POST[ 'submit' ] ) ) {
     <meta charset="utf-8">
     <title>Unit Conversion</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
     
     <main id="content">
 
-        <h1>Unit Conversion</h1>
+<!--        <h1>Unit Converter</h1>-->
         
         <ul id="unit-types">
 <!--            <li><a href="view/length.php">Length and distance</a></li>-->
@@ -244,12 +259,12 @@ if( isset( $_POST[ 'submit' ] ) ) {
          * @link: http://stackoverflow.com/questions/22201149/ajax-javascript-select-element-change-on-page-load-in-php
          * @link: http://www.dyn-web.com/tutorials/forms/select/paired.php
          */
-        echo '<pre>';
-        var_dump( $_POST );
-        echo '</pre>';
+//        echo '<pre>';
+//        var_dump( $_POST );
+//        echo '</pre>';
         ?>
         <form id="conversion-form" action="" method="POST">
-            
+            <h2>Unit Converter</h2>
             <div id="conversion-type">
                 <p></p>
                 <input type="text" id="convert_string" name="convert_string" value="<?= $convert_string; ?>">
@@ -278,7 +293,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
             
             <div id="conversion-units">
                 <div class="entry">
-                    <p id="from-units"><?= "From: $from_unit"; ?></p>
+                    <p id="from-units"><?= "From: $from_unit_str"; ?></p>
                     <input type="text" name="from_value" value="<?= $from_value; ?>">
                     <select name="from_unit[]">
 
@@ -295,7 +310,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
                 </div>
                 <span id="equal-sign">=</span>
                 <div class="entry">
-                    <p id="to-units"><?= "To: $to_unit"; ?></p>
+                    <p id="to-units"><?= "To: $to_unit_str"; ?></p>
                     <input type="text" name="to_value" value="<?= float_to_string( $to_value ); ?>">
                     <select name="to_unit[]">
 
