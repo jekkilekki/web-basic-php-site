@@ -64,6 +64,7 @@ function optionize( $string ) {
  * Formats a float into a string, avoids default scientific notation, rounds to $precision and trims trailing zeroes.
  */
 function float_to_string( $float, $precision=10 ) {
+    if( $float == '' ) return $float;
     // Typecast to insure value is a float
     $float = (float) $float;
     $string = number_format( $float, $precision, '.', '' );

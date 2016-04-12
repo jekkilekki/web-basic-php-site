@@ -49,43 +49,44 @@ $convert_options = array(
 );
 // https://support.google.com/websearch/answer/3284611?hl=en-KR#unitconverter
 $full_convert_options = array(
-    //'acceleration',
-    //'angles',
+    'acceleration',
+    'angles',
     'area',
-    //'currency',
-    //'data transfer rate',
-    //'density',
-    //'digital storage size',
-    //'electric capacitance',
-    //'electric charge',
-    //'electric conductance',
-    //'electric current',
-    //'energy',
-    //'flow rate',
-    //'force',
-    //'frequency',
-    //'fuel economy',
-    //'inductance',
+    'currency',
+    'data transfer rate',
+    'density',
+    'digital storage size',
+    'electric capacitance',
+    'electric charge',
+    'electric conductance',
+    'electric current',
+    'energy',
+    'flow rate',
+    'force',
+    'frequency',
+    'fuel economy',
+    'inductance',
     'length and distance',
-    //'light intensity',
-    //'magnetic flux',
+    'light intensity',
+    'magnetic flux',
     'mass and weight',
-    //'misc',
-    //'power',
-    //'pressure',
-    //'radiation dosage',
-    //'radioactivity',
+    'misc',
+    'power',
+    'pressure',
+    'radiation dosage',
+    'radioactivity',
     'speed',
     'temperature',
-    //'time',
-    //'torque',
-    //'unitless numeric',
-    //'voltage',
+    'time',
+    'torque',
+    'unitless numeric',
+    'voltage',
     'volume',
 );
 
 $convert_this = '';
 $convert_string = '';
+$list_choice = '';
 
 // Set defaults
 $from_value = '';
@@ -96,6 +97,8 @@ $to_unit = '';
 $to_value = '';
 
 if( isset( $_POST[ 'submit' ] ) ) {
+    
+    $list_choice = $_POST[ 'options' ];
     
     //$convert_this = optionize( $_POST[ 'conversion_type' ] );
     $convert_this = $_POST[ 'conversion_type' ];
@@ -111,105 +114,39 @@ if( isset( $_POST[ 'submit' ] ) ) {
     $to_unit = optionize( $to_unit_str );
     
     switch( $convert_this ) {
-        case 'acceleration':
-            $to_value = convert_acceleration( $from_value, $from_unit, $to_unit );
-            break;
-        case 'angles':
-            $to_value = convert_angles( $from_value, $from_unit, $to_unit );
-            break;
-        case 'area':
-            $to_value = convert_area( $from_value, $from_unit, $to_unit );
-            break;
-        case 'currency':
-            $to_value = convert_currency( $from_value, $from_unit, $to_unit );
-            break;
-        case 'data_transfer_rate':
-            $to_value = convert_data_transfer( $from_value, $from_unit, $to_unit );
-            break;
-        case 'density':
-            $to_value = convert_density( $from_value, $from_unit, $to_unit );
-            break;
-        case 'digital_storage_size':
-            $to_value = convert_digital_storage( $from_value, $from_unit, $to_unit );
-            break;
-        case 'electric_capacitance':
-            $to_value = convert_electric_cap( $from_value, $from_unit, $to_unit );
-            break;
-        case 'electric_charge':
-            $to_value = convert_electric_charge( $from_value, $from_unit, $to_unit );
-            break;
-        case 'electric_conductance':
-            $to_value = convert_electric_cond( $from_value, $from_unit, $to_unit );
-            break;
-        case 'electric_current':
-            $to_value = convert_electric_curr( $from_value, $from_unit, $to_unit );
-            break;
-        case 'energy':
-            $to_value = convert_energy( $from_value, $from_unit, $to_unit );
-            break;
-        case 'flow_rate':
-            $to_value = convert_flow( $from_value, $from_unit, $to_unit );
-            break;
-        case 'force':
-            $to_value = convert_force( $from_value, $from_unit, $to_unit );
-            break;
-        case 'frequency':
-            $to_value = convert_frequency( $from_value, $from_unit, $to_unit );
-            break;
-        case 'fuel_economy':
-            $to_value = convert_fuel( $from_value, $from_unit, $to_unit );
-            break;
-        case 'inductance':
-            $to_value = convert_inductance( $from_value, $from_unit, $to_unit );
-            break;
-        case 'length_and_distance':
-            $to_value = convert_length( $from_value, $from_unit, $to_unit );
-            break;
-        case 'light_intensity':
-            $to_value = convert_light( $from_value, $from_unit, $to_unit );
-            break;
-        case 'magnetic_flux':
-            $to_value = convert_magnetic( $from_value, $from_unit, $to_unit );
-            break;
-        case 'mass_and_weight':
-            $to_value = convert_mass( $from_value, $from_unit, $to_unit );
-            break;
-        case 'misc':
-            $to_value = convert_misc( $from_value, $from_unit, $to_unit );
-            break;
-        case 'power':
-            $to_value = convert_power( $from_value, $from_unit, $to_unit );
-            break;
-        case 'pressure':
-            $to_value = convert_pressure( $from_value, $from_unit, $to_unit );
-            break;
-        case 'radiation_dosage':
-            $to_value = convert_radiation( $from_value, $from_unit, $to_unit );
-            break;
-        case 'radioactivity':
-            $to_value = convert_radioactivity( $from_value, $from_unit, $to_unit );
-            break;
-        case 'speed':
-            $to_value = convert_speed( $from_value, $from_unit, $to_unit );
-            break;
-        case 'temperature':
-            $to_value = convert_temperature( $from_value, $from_unit, $to_unit );
-            break;
-        case 'time':
-            $to_value = convert_time( $from_value, $from_unit, $to_unit );
-            break;
-        case 'torque':
-            $to_value = convert_torque( $from_value, $from_unit, $to_unit );
-            break;
-        case 'unitless_numeric':
-            $to_value = convert_unitless( $from_value, $from_unit, $to_unit );
-            break;
-        case 'voltage':
-            $to_value = convert_voltage( $from_value, $from_unit, $to_unit );
-            break;
-        case 'volume':
-            $to_value = convert_volume( $from_value, $from_unit, $to_unit );
-            break;
+        case 'acceleration':        $to_value = convert_acceleration( $from_value, $from_unit, $to_unit ); break;
+        case 'angles':              $to_value = convert_angles( $from_value, $from_unit, $to_unit ); break;
+        case 'area':                $to_value = convert_area( $from_value, $from_unit, $to_unit ); break;
+        case 'currency':            $to_value = convert_currency( $from_value, $from_unit, $to_unit ); break;
+        case 'data_transfer_rate':  $to_value = convert_data_transfer( $from_value, $from_unit, $to_unit ); break;
+        case 'density':             $to_value = convert_density( $from_value, $from_unit, $to_unit ); break;
+        case 'digital_storage_size':$to_value = convert_digital_storage( $from_value, $from_unit, $to_unit ); break;
+        case 'electric_capacitance':$to_value = convert_electric_cap( $from_value, $from_unit, $to_unit ); break;
+        case 'electric_charge':     $to_value = convert_electric_charge( $from_value, $from_unit, $to_unit ); break;
+        case 'electric_conductance':$to_value = convert_electric_cond( $from_value, $from_unit, $to_unit ); break;
+        case 'electric_current':    $to_value = convert_electric_curr( $from_value, $from_unit, $to_unit ); break;
+        case 'energy':              $to_value = convert_energy( $from_value, $from_unit, $to_unit ); break;
+        case 'flow_rate':           $to_value = convert_flow( $from_value, $from_unit, $to_unit ); break;
+        case 'force':               $to_value = convert_force( $from_value, $from_unit, $to_unit ); break;
+        case 'frequency':           $to_value = convert_frequency( $from_value, $from_unit, $to_unit ); break;
+        case 'fuel_economy':        $to_value = convert_fuel( $from_value, $from_unit, $to_unit ); break;
+        case 'inductance':          $to_value = convert_inductance( $from_value, $from_unit, $to_unit ); break;
+        case 'length_and_distance': $to_value = convert_length( $from_value, $from_unit, $to_unit ); break;
+        case 'light_intensity':     $to_value = convert_light( $from_value, $from_unit, $to_unit ); break;
+        case 'magnetic_flux':       $to_value = convert_magnetic( $from_value, $from_unit, $to_unit ); break;
+        case 'mass_and_weight':     $to_value = convert_mass( $from_value, $from_unit, $to_unit ); break;
+        case 'misc':                $to_value = convert_misc( $from_value, $from_unit, $to_unit ); break;
+        case 'power':               $to_value = convert_power( $from_value, $from_unit, $to_unit ); break;
+        case 'pressure':            $to_value = convert_pressure( $from_value, $from_unit, $to_unit ); break;
+        case 'radiation_dosage':    $to_value = convert_radiation( $from_value, $from_unit, $to_unit ); break;
+        case 'radioactivity':       $to_value = convert_radioactivity( $from_value, $from_unit, $to_unit ); break;
+        case 'speed':               $to_value = convert_speed( $from_value, $from_unit, $to_unit ); break;
+        case 'temperature':         $to_value = convert_temperature( $from_value, $from_unit, $to_unit ); break;
+        case 'time':                $to_value = convert_time( $from_value, $from_unit, $to_unit ); break;
+        case 'torque':              $to_value = convert_torque( $from_value, $from_unit, $to_unit ); break;
+        case 'unitless_numeric':    $to_value = convert_unitless( $from_value, $from_unit, $to_unit ); break;
+        case 'voltage':             $to_value = convert_voltage( $from_value, $from_unit, $to_unit ); break;
+        case 'volume':              $to_value = convert_volume( $from_value, $from_unit, $to_unit ); break;
         default:
             $to_value = 'Unsupported conversion type.';
     }
@@ -265,27 +202,41 @@ if( isset( $_POST[ 'submit' ] ) ) {
         ?>
         <form id="conversion-form" action="" method="POST">
             <h2>Unit Converter</h2>
+            
+            <ul id="list-options">
+                <li name="basic" class="convert-list-options active">Basic</li>
+                <li name="default" class="convert-list-options">Default</li>
+                <li name="advanced" class="convert-list-options">Advanced</li>
+            </ul>
+            
             <div id="conversion-type">
                 <p></p>
                 <input type="text" id="convert_string" name="convert_string" value="<?= $convert_string; ?>">
-                <select name="conversion_type">
+                <select name="conversion_type[]">
                     
                     <?php
-                    if( false ) {
-                        foreach( $convert_options as $type ) {
-                            $opt = optionize( $type );
-                            echo "<option value='$opt'";
-                            if( $convert_this == $opt ) { echo " selected"; }
-                            echo ">" . ucfirst( $type ) . "</option>";
-                        }
-                    } else {
-                        foreach( $full_convert_options as $type ) {
-                            $opt = optionize( $type );
-                            echo "<option value='$opt'";
-                            if( $convert_this == $opt ) { echo " selected"; }
-                            echo ">" . ucfirst( $type ) . "</option>";
-                        }
-                    }
+//                    if( $list_choice == 'advanced' ) {
+//                        foreach( $full_convert_options as $type ) {
+//                            $opt = optionize( $type );
+//                            echo "<option value='$opt'";
+//                            if( $convert_this == $opt ) { echo " selected"; }
+//                            echo ">" . ucfirst( $type ) . "</option>";
+//                        }
+//                    } elseif( $list_choice == 'default' ) {
+//                        foreach( $convert_options as $type ) {
+//                            $opt = optionize( $type );
+//                            echo "<option value='$opt'";
+//                            if( $convert_this == $opt ) { echo " selected"; }
+//                            echo ">" . ucfirst( $type ) . "</option>";
+//                        }
+//                    } else {
+//                        foreach( $basic_options as $type ) {
+//                            $opt = optionize( $type );
+//                            echo "<option value='$opt'";
+//                            if( $convert_this == $opt ) { echo " selected"; }
+//                            echo ">" . ucfirst( $type ) . "</option>";
+//                        }
+//                    }
                     ?>
                     
                 </select>
@@ -334,6 +285,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
     </main>
     
     <!-- <script src="js/list.js" type="text/javascript"></script> -->
+    <script src="js/list-choice.js" type="text/javascript"></script>
     <script src="js/functions.js" type="text/javascript"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@ main {
 }
 #conversion-form h2 {
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 #conversion-form p {
     margin-bottom: 5px;
@@ -29,11 +29,32 @@ main {
     width: 520px;
     margin: 20% auto;
 }
+.convert-list-options {
+    display: inline;
+    padding: 5px 7px;
+    border: 1px solid #d9d9d9;
+    margin: 0px;
+    font-size: 0.8em;
+    color: silver;
+    cursor: pointer;
+    margin-left: -1px;
+}
+.convert-list-options:first-child {
+    margin-left: 0;
+}
+.convert-list-options.active {
+    background: whitesmoke;
+/*    color: darkgray;*/
+    color: gray;
+}
+.convert-list-options input {
+    margin-right: 5px;
+}
 #conversion-form input[type="submit"] {
     display: none;
 }
 #conversion-form select {
-    background: url(//ssl.gstatic.com/ui/v1/disclosure/grey-disclosure-arrow-up-down.png) 100% no-repeat whiteSmoke;
+    background: url(//ssl.gstatic.com/ui/v1/disclosure/grey-disclosure-arrow-up-down.png) 98% no-repeat whiteSmoke;
     border: 1px solid gainsboro;
     font-size: 13px;
     line-height: 20px;
@@ -58,9 +79,10 @@ main {
     border-radius: 2px 2px 0 0;
     width: 440px;
     display: block;
+    margin-top: -1px;
 }
 #conversion-units {
-    padding-top: 10px;
+    padding-top: 5px;
 }
 #conversion-units .entry {
     display: inline-block;
@@ -90,7 +112,7 @@ main {
     text-align: center;
     font-size: 26px;
     color: #878787;
-    padding-top: 10px;
+    padding-top: 25px;
     vertical-align: top;
     margin-left: -4px;
     margin-right: -4px;
