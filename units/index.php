@@ -86,7 +86,7 @@ $full_convert_options = array(
 
 $convert_this = '';
 $convert_string = '';
-$list_choice = '';
+$list_choice = 'default';
 
 // Set defaults
 $from_value = '';
@@ -98,7 +98,7 @@ $to_value = '';
 
 if( isset( $_POST[ 'submit' ] ) ) {
     
-    $list_choice = $_POST[ 'options' ];
+    $list_choice = $_POST[ 'remember_options' ];
     
     //$convert_this = optionize( $_POST[ 'conversion_type' ] );
     $convert_this = $_POST[ 'conversion_type' ];
@@ -106,8 +106,8 @@ if( isset( $_POST[ 'submit' ] ) ) {
     $from_value = $_POST[ 'from_value' ];
     
     // These variables maintain spaces and capitalization for output later
-    $from_unit_str = $_POST[ 'from_unit' ][0];
-    $to_unit_str = $_POST[ 'to_unit' ][0];
+    $from_unit_str = str_replace( '_', ' ', $_POST[ 'from_unit' ][0] );
+    $to_unit_str = str_replace( '_', ' ', $_POST[ 'to_unit' ][0] );
     
     // These variables replace spaces with underscores and lowercase everything to be sent to the functions
     $from_unit = optionize( $from_unit_str );
@@ -162,7 +162,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
     <meta charset="utf-8">
     <title>Unit Conversion</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
     
@@ -203,15 +203,19 @@ if( isset( $_POST[ 'submit' ] ) ) {
         <form id="conversion-form" action="" method="POST">
             <h2>Unit Converter</h2>
             
-            <ul id="list-options">
-                <li name="basic" class="convert-list-options active">Basic</li>
-                <li name="default" class="convert-list-options">Default</li>
-                <li name="advanced" class="convert-list-options">Advanced</li>
-            </ul>
+            <ol id="list-options">
+                <li name="basic" value="0" class="convert-list-options <?= $list_choice == 'basic' ? ' active' : ''; ?>">Basic</li>
+                <li name="default" value="1" class="convert-list-options <?= $list_choice == 'default' ? ' active' : ''; ?>">Default</li>
+                <li name="advanced" value="2" class="convert-list-options <?= $list_choice == 'advanced' ? ' active' : ''; ?>">Advanced</li>
+            </ol>
+            <input type="hidden" id="remember_options" value="<?= $list_choice; ?>" name="remember_options">
+            
+            <div id="show-input-option" class="convert-list-options no-border">
+                <input type="checkbox" id="show_str_input">Show input field
+            </div>
             
             <div id="conversion-type">
-                <p></p>
-                <input type="text" id="convert_string" name="convert_string" value="<?= $convert_string; ?>">
+                <input type="text" id="convert_string" name="convert_string" value="<?= $convert_string; ?>" placeholder="Format: X units to units">
                 <select name="conversion_type[]">
                     
                     <?php
@@ -244,7 +248,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
             
             <div id="conversion-units">
                 <div class="entry">
-                    <p id="from-units"><?= "From: $from_unit_str"; ?></p>
+                    <p>From:</p>
                     <input type="text" name="from_value" value="<?= $from_value; ?>">
                     <select name="from_unit[]">
 
@@ -258,10 +262,11 @@ if( isset( $_POST[ 'submit' ] ) ) {
                         ?>
 
                     </select>
+                    <input type="hidden" id="from-units" value="<?= $from_unit_str; ?>">
                 </div>
                 <span id="equal-sign">=</span>
                 <div class="entry">
-                    <p id="to-units"><?= "To: $to_unit_str"; ?></p>
+                    <p>To:</p>
                     <input type="text" name="to_value" value="<?= float_to_string( $to_value ); ?>">
                     <select name="to_unit[]">
 
@@ -275,10 +280,17 @@ if( isset( $_POST[ 'submit' ] ) ) {
                         ?>
 
                     </select>
+                    <input type="hidden" id="to-units" value="<?= $to_unit_str; ?>">
                 </div>
             </div><!-- END #conversion-units -->
-
-            <input type="submit" name="submit" value="Submit">
+            
+            <div class="convert-list-options no-border">
+                <input id="full_options" type="checkbox">Show ALL units
+            </div>
+            
+            <div class="convert-list-options no-border right">
+                <input type="submit" name="submit" value="Convert">
+            </div>
             
         </form><!-- END #converion-form -->
         

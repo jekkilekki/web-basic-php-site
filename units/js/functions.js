@@ -112,7 +112,8 @@ var Conversion_Unit_Lists = {
             text: [ 'arc minutes', 'arc seconds', 'degrees', 'radians', 'revolutions', 'turns' ],
         },
         area: {
-            text: [ 'acres', 'ares', 'barns', 'cricket pitches', 'dunams', 'football fields', 'football pitches', 'hectares', 'pings', 'Planck areas', 'sections', 'square centimeters', 'square feet', 'square inches', 'square kilometers', 'square meters', 'square millimeters', 'square yards', 'stokes', 'survey townships' ],
+            text: [ 'acres', 'ares', 'barns', 'cricket pitches', 'dunams', 'football fields', 'football pitches', 'hectares', 'pings', 'Planck areas', 'pyoung (KO)', 'sections', 'square centimeters', 'square feet', 'square inches', 'square kilometers', 'square meters', 'square millimeters', 'square yards', 'stokes', 'survey townships' ],
+            default: [ 'square kilometers', 'square meters', 'square miles', 'square yards', 'square feet', 'square inches', 'hectares', 'acres', 'pyoung (KO)' ],
         },
         currency: {
             text: [ 'Algerian dinars', 'Argentine pesos', 'Australian cents', 'Australian dollars', 'Bahrain dinars', 'Bolivian bolivianos', 'Botswana pula', 'Brazil reais', 'British pounds', 'Brunei dollars', 'Bulgarian levs', 'Canadian cents', 'Canadian dollars', 'Cayman Islands dollars', 'Chilean pesos', 'Chinese yuan', 'Colombian pesos', 'Costa Rican colones', 'Croatian kuna', 'Czech koruna', 'Danish kroner', 'Dominican pesos', 'Egyptian pounds', 'Estonian kroons', 'Eurocents', 'Euros', 'Fiji dollars', 'Honduran lempiras', 'Hong Kong dollars', 'Hungarian forints', 'Indian rupees', 'Indonesian rupiahs', 'Israeli shekels', 'Jamaican dollars', 'Japanese yen', 'Jordanian dinars', 'Kazakh tenge', 'Kenyan shillings', 'Kuwaiti dinars', 'Latvian lats', 'Lebanese pounds', 'Lithuanian litas', 'Macedonian denari', 'Malaysian ringgits', 'Mauritian rupees', 'Mexican pesos', 'Moldovan leu', 'Moroccan dirhams', 'Namibian dollars', 'Nepalese rupees', 'Netherlands Antilles guilders', 'New Zealand dollars', 'Nicaraguan cordobas', 'Nigerian naira', 'Norwegian kroner', 'Omani rials', 'Pakistan rupees', 'Papua New Guinean kina', 'Paraguayan guaranies', 'Peruvian nuevos soles', 'Philippine pesos', 'Polish zloty', 'Qatar riyals', 'Romanian lei', 'Russian rubles', 'Salvadoran colones', 'Saudi riyals', 'Seychelles rupees', 'Sierra Leonean leones', 'Singapore dollars', 'Slovak koruna', 'South African rands', 'South Korean won', 'Sri Lankan rupees', 'Swedish kronor', 'Swiss francs', 'Taiwan dollars', 'Tanzanian shillings', 'Thai baht', 'Trinidad dollars', 'Tunisian dinar', 'Turkish liras', 'Ugandan shillings', 'Ukrainian grivnas', 'United Arab Emirates dirhams', 'Uruguayan pesos', 'U.S. cents', 'U.S. dollars', 'Uzbekistani sum', 'Venezuelan bolivares fuertes', 'Venezuelan bolivars', 'Vietnamese dong', 'Yemeni rials', 'Zambia kwacha' ],
@@ -154,7 +155,8 @@ var Conversion_Unit_Lists = {
             text: [ 'henries' ],
         },
         length_and_distance: {
-            text: [ 'angstrom', 'Astronomical Units', 'ATA picas', 'ATA points', 'beard-seconds', 'chains', 'centimeters', 'Ciceros', 'cubits', 'Didot points', 'English ells', 'fathoms', 'feet' , 'Flemish ells', 'football fields', 'football pitches', 'French ells', 'furlongs', 'Half Ironman Triathlon bikes', 'Half Ironman Triathlon runs', 'Half Ironman Triathlon swims', 'Half Ironman Triathlons', 'hands', 'Imperial cables', 'IN picas', 'IN Points', 'inches', 'indoor track lengths', 'international cables', 'Ironman Triathlon bikes', 'Ironman Triathlon runs', 'Ironman Triathlon swims', 'Ironman Triathlons', 'itinerary stadions', 'kilometers', 'Kpc', 'length of cricket pitches', 'light-days', 'light-hours', 'light-minutes', 'light-seconds', 'light-years', 'marathons', 'meters', 'metres', 'metres', 'microns', 'miles', 'Mpc', 'nails', 'nautical leagues', 'nautical miles', 'Olympic Pools', 'Olympic stadion', 'Olympic Triathlon bikes', 'Olympic Triathlon runs', 'Olympic Triathlon swims', 'Olympic Triathlons', 'outdoor track lengths', 'Parsecs', 'Planck Lengths', 'PostScript picas', 'PostScript points', 'Rack units', 'rods', 'Scottish ells', 'Short Course Pools', 'smoots', 'spans', 'Sprint Triathlon bikes', 'Sprint Triathlon runs', 'Sprint Triathlon swims', 'Sprint Triathlons', 'TeX picas', 'TeX points', 'thou', 'Truchet picas', 'Truchet points', 'US cables', 'yards' ],
+            text: [ 'angstrom', 'Astronomical Units', 'ATA picas', 'ATA points', 'beard-seconds', 'chains', 'centimeters', 'Ciceros', 'cubits', 'Didot points', 'English ells', 'fathoms', 'feet' , 'Flemish ells', 'football fields', 'football pitches', 'French ells', 'furlongs', 'Half Ironman Triathlon bikes', 'Half Ironman Triathlon runs', 'Half Ironman Triathlon swims', 'Half Ironman Triathlons', 'hands', 'Imperial cables', 'IN picas', 'IN Points', 'inches', 'indoor track lengths', 'international cables', 'Ironman Triathlon bikes', 'Ironman Triathlon runs', 'Ironman Triathlon swims', 'Ironman Triathlons', 'itinerary stadions', 'kilometers', 'cricket pitches', 'light-days', 'light-hours', 'light-minutes', 'light-seconds', 'light-years', 'marathons', 'meters', 'microns', 'miles', 'nails', 'nautical leagues', 'nautical miles', 'Olympic Pools', 'Olympic stadions', 'Olympic Triathlon bikes', 'Olympic Triathlon runs', 'Olympic Triathlon swims', 'Olympic Triathlons', 'outdoor track lengths', 'Parsecs', 'Planck Lengths', 'PostScript picas', 'PostScript points', 'Rack units', 'rods', 'Scottish ells', 'Short Course Pools', 'smoots', 'spans', 'Sprint Triathlon bikes', 'Sprint Triathlon runs', 'Sprint Triathlon swims', 'Sprint Triathlons', 'TeX picas', 'TeX points', 'thou', 'Truchet picas', 'Truchet points', 'US cables', 'yards' ],
+            default: [ 'kilometers', 'meters', 'centimeters', 'millimeters', 'micrometers', 'nanometers', 'miles', 'yards', 'feet', 'inches', 'nautical miles' ],
         },
         light_intensity: {
             text: [ 'candelas', 'footcandles', 'lamberts', 'lumens', 'lux' ],
@@ -164,6 +166,7 @@ var Conversion_Unit_Lists = {
         },
         mass_and_weight: {
             text: [ 'atomic mass units', 'Blintzes', 'butter firkins', 'carats', 'drams', 'earth masses', 'English stones', 'Farshimmelt Blintzes', 'funt', 'Furshlugginer Blintzes', 'grains', 'grams', 'imperial tons', 'jupiter masses', 'kilograms', 'lunar masses', 'metric tonnes', 'micrograms', 'ounces', 'pennyweights', 'pood', 'pounds', 'short tons', 'slugs', 'soap firkins', 'solar masses', 'stones', 'troy drams', 'troy ounces' ],
+            default: [ 'metric tonnes', 'kilograms', 'grams', 'milligrams', 'micrograms', 'imperial tons', 'US tons', 'stone', 'pounds', 'ounces' ],
         },
         misc: {
             text: [ 'dioptres', 'emus', 'katal', 'moles' ],
@@ -181,10 +184,11 @@ var Conversion_Unit_Lists = {
             text: [ 'becquerels', 'curies', 'rutherfords' ],
         },
         speed: {
-            text: [ 'feet per second', 'kilometers per hour', 'meters per second', 'miles per hour', 'nautical miles per hour' ],
+            text: [ 'miles per hour', 'feet per second', 'meters per second', 'kilometers per hour', 'knots' ],
         },
         temperature: {
             text: [ 'Celsius', 'Fahrenheit', 'Kelvin', 'Rankine' ],
+            default: [ 'Celsius', 'Fahrenheit', 'Kelvin' ],
         },
         time: {
             text: [ 'centuries', 'days', 'decades', 'fortnights', 'halakim', 'hours', 'leap years', 'lunar cycles', 'lustrum', 'millennium', 'minutes', 'months', 'seconds', 'sidereal days', 'sidereal years', 'weeks', 'years' ],
@@ -197,9 +201,10 @@ var Conversion_Unit_Lists = {
         },
         volume: {
             text: [ 'acre-feet', 'barrels of oil', 'beer barrels', 'beer firkins', 'beer hogsheads', 'beer kilderkins', 'board feet', 'bushels', 'cords', 'cubic centimeters', 'cubic feet', 'cubic inches', 'cubic kilometers', 'cubic meters', 'cubic millimeters', 'cups', 'English tierces', 'fluid barrels', 'fluid drams', 'fluid ounces', 'full kegs', 'gallons', 'gills', 'Gross Register Tonnes', 'half barrels', 'hogsheads', 'Imperial beer barrels', 'Imperial bushels', 'Imperial dessertspoons', 'Imperial fluid drams', 'Imperial fluid ounces', 'Imperial fluid ounces', 'Imperial gallons', 'Imperial gills', 'Imperial minims', 'Imperial pecks', 'Imperial pints', 'Imperial quarts', 'Imperial tablespoons', 'Imperial teaspoons', 'liters', 'litres', 'minims', 'pecks', 'pints', 'puncheons', 'quarter barrels', 'quarts', 'register tonnes', 'shots', 'sixth barrels', 'sticks of butter', 'tablespoons', 'teaspoons', 'tierces', 'wine firkins', 'wine rundlets' ],
+            default: [ 'liters', 'milliliters', 'US gallons', 'US quarts', 'US pints', 'US cups', 'US ounces', 'US tablespoons', 'US teaspoons', 'imperial gallons', 'imperial quarts', 'imperial pints', 'imperial cups', 'imperial ounces', 'imperial tablespoons', 'imperial teaspoons', 'cubic inches', 'cubic feet', 'cubic centimeters', 'cubic meters', ],
         },
         
-    }
+    },
     
 }
 
@@ -231,21 +236,38 @@ function appendDataToSelect( sel, obj, str="" ) {
         var f = document.createDocumentFragment();
         var o;
         
-        for( var i=0, len=obj.text.length; i<len; i++ ) {
-            o = document.createElement( 'option' );
-            o.appendChild( document.createTextNode( obj.text[i] ) );
-            
-            if( obj.value ) {
-                o.value = obj.value[i];
-            } else {
-                //var val = obj.text[i];
-                o.value = obj.text[i].replace( ' ', '_' );
+        if( !document.getElementById( 'full_options' ).checked && obj.default ) {
+            for( var i=0, len=obj.default.length; i<len; i++ ) {
+                o = document.createElement( 'option' );
+                o.appendChild( document.createTextNode( obj.default[i] ) );
+
+                if( obj.value ) {
+                    o.value = obj.value[i];
+                } else {
+                    o.value = obj.default[i].replace( ' ', '_' );
+                }
+                if( obj.default[i] == str ) {
+                    o.selected = true;
+                }
+
+                f.appendChild( o );
             }
-            if( obj.text[i] == str ) {
-                o.selected = true;
+        } else {
+            for( var i=0, len=obj.text.length; i<len; i++ ) {
+                o = document.createElement( 'option' );
+                o.appendChild( document.createTextNode( obj.text[i] ) );
+
+                if( obj.value ) {
+                    o.value = obj.value[i];
+                } else {
+                    o.value = obj.text[i].replace( ' ', '_' );
+                }
+                if( obj.text[i] == str ) {
+                    o.selected = true;
+                }
+
+                f.appendChild( o );
             }
-            
-            f.appendChild( o );
         }
         return f;
     }
@@ -271,11 +293,16 @@ function appendDataToSelect( sel, obj, str="" ) {
     
 }
 
-var fromSelected = document.getElementById( 'from-units' ).innerHTML;
-var toSelected = document.getElementById( 'to-units' ).innerHTML;
+document.getElementById( 'show_str_input' ).onchange = function( e ) {
+    if( document.getElementById( 'show_str_input' ).checked ) {
+        document.getElementById( 'convert_string' ).style.display = 'block';
+    } else {
+        document.getElementById( 'convert_string' ).style.display = 'none';
+    }
+}
 
-fromSelected = fromSelected.replace( 'From: ', '' );
-toSelected = toSelected.replace( 'To: ', '' );
+var fromSelected = document.getElementById( 'from-units' ).value;
+var toSelected = document.getElementById( 'to-units' ).value;
 
 // function assigned to onchange event of unit select boxes
 document.forms[ 'conversion-form' ].elements[ 'from_unit[]' ].onchange = function( e ) {
@@ -291,27 +318,14 @@ document.forms[ 'conversion-form' ].elements[ 'to_unit[]' ].onchange = function(
     }
 }
 
+// function to listen for checkbox events (show ALL options)
+document.getElementById( 'full_options' ).onchange = function( e ) {
+    reloadSelectOptions( this );
+}
+
 // anonymous function assigned to onchange event of controlling select box
 document.forms[ 'conversion-form' ].elements[ 'conversion_type[]' ].onchange = function( e ) {
-    
-    // name of associated select box
-    var fromName = 'from_unit[]';
-    var toName = 'to_unit[]';
-    
-    // reference to associated select box
-    var fromList = this.form.elements[ fromName ];
-    var toList = this.form.elements[ toName ];
-    
-    // remove current option elements
-    removeAllOptions( fromList, true );
-    removeAllOptions( toList, true );
-    
-    // call function to add optgroup/option elements
-    // pass reference to assc select box and data for new options
-    
-    appendDataToSelect( fromList, Conversion_Unit_Lists[ fromName ][ this.value ] );
-    appendDataToSelect( toList, Conversion_Unit_Lists[ toName ][ this.value ] );
-    
+    reloadSelectOptions();
 };
 
 // populate associated select box as page loads
@@ -320,33 +334,35 @@ window.onload = function() { // immediate function to avoid globals
     // For the initial Unit Converter Types List
     var form = document.forms[ 'conversion-form' ];
     var sel = form.elements[ 'conversion_type[]' ];
-    var listName = 'list_choice[]';
+    
+    var listName = document.getElementById( 'remember_options' ).value;
     
     // Load the Basic Conversion Types List
-    appendListOptions( sel, Conversion_List_Choices[ 'conversion_type[]' ][ 'basic' ] );
+    appendListOptions( sel, Conversion_List_Choices[ 'conversion_type[]' ][ listName ] );
     
-    
-    // For the select lists within the Unit Converter
-    var form = document.forms[ 'conversion-form' ];
-
-    // reference to controlling select box
-    var sel = form.elements[ 'conversion_type[]' ];
-    //sel.selectedIndex = selectedOption;
-
-    // name of assc select box
-    var fromName = 'from_unit[]';
-    var toName = 'to_unit[]';
-    // reference to assc select box
-    var from = form.elements[ fromName ];
-    var to = form.elements[ toName ];
-
-    // get data for assc select box passing its name
-    // and value of selected in controlling select box
-    var fromData = Conversion_Unit_Lists[ fromName ][ sel.value ];
-    var toData = Conversion_Unit_Lists[ toName ][ sel.value ];
-
-    // add options to associated select box
-    appendDataToSelect( from, fromData, fromSelected );
-    appendDataToSelect( to, toData, toSelected );
+    reloadSelectOptions();
     
 };
+
+function reloadSelectOptions() {
+    
+    var obj = document.forms[ 'conversion-form' ].elements[ 'conversion_type[]' ];
+    
+    // name of associated select box
+    var fromName = 'from_unit[]';
+    var toName = 'to_unit[]';
+    
+    // reference to associated select box
+    var fromList = obj.form.elements[ fromName ];
+    var toList = obj.form.elements[ toName ];
+    
+    // remove current option elements
+    removeAllOptions( fromList, true );
+    removeAllOptions( toList, true );
+    
+    // call function to add optgroup/option elements
+    // pass reference to assc select box and data for new options
+    
+    appendDataToSelect( fromList, Conversion_Unit_Lists[ fromName ][ obj.value ], fromSelected );
+    appendDataToSelect( toList, Conversion_Unit_Lists[ toName ][ obj.value ], toSelected );
+}
