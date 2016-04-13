@@ -110,22 +110,6 @@ $length_to_meter = array(
     'chains'                => 20.1168,
     'furlongs'              => 201.168,
     
-    // Area - take the sqrt as it will be squared in the function
-    'acres'                 => 63.6149072341,   // sqrt(4046.8564224) 
-    //'ares'                  => , // sqrt()
-    //'barns'                 => , // sqrt()
-    //'cricket_pitches'       => , // sqrt()
-    //'dunams'                => , // sqrt()
-    //'football_fields'       => , // sqrt()
-    //'football_pitches'      => , // sqrt()
-    'hectares'              => 100,             // sqrt(10000)
-    //'pings'                 => , // sqrt()
-    //'Planck areas'          => , // sqrt()
-    'pyoung-ko'             => 1.81818590909,   // sqrt(3.3058)
-    //'sections'              => , // sqrt()
-    //'stokes'                => , // sqrt()
-    //'survey_townships'      => , // sqrt()
-    
     // Unusual Units
     // http://io9.gizmodo.com/5827925/ten-unbelievably-strange-units-of-measurement
     // https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement#Length
@@ -195,6 +179,20 @@ $length_to_meter = array(
     'sheppies'              => 1400,
     'wiffles'               => 0.089,
     
+    // Area - take the sqrt as it will be squared in the function
+    'acres'                 => 63.6149072341,   // sqrt(4046.8564224) 
+    'ares'                  => 10, // sqrt(100)
+    'barns'                 => 0.00000000000001, // sqrt(0.0000000000000000000000000001)
+    'cricket_pitches'       => 7.83364538386, // sqrt(61.366)
+    'dunams'                => 31.6227766017, // sqrt(1000)
+    'football_fields'       => 73.1519999727, // sqrt(5351.2151)
+    'football_pitches'      => 84.4985206971, // sqrt(7140)
+    'hectares'              => 100,             // sqrt(10000)
+    'pings'                 => 1.81818315909, // sqrt(3.30579)
+    'planck_areas'          => 0.00000000000000000000000000016161683, // sqrt(0.0000000000000000000000000000000000000000000000000000000000000000002612)
+    'pyoung_(ko)'           => 1.81818590909,   // sqrt(3.3058)
+    'sections'              => 1609.34769394, // sqrt(2590000)
+    'survey_townships'      => 9656.08616366, // sqrt(93240000)
 );
 
 function x_to_meters( $value, $from_unit ) {
@@ -231,7 +229,7 @@ function convert_length( $value, $from_unit, $to_unit ) {
  */
 function x_to_sq_meters( $value, $from_unit ) {
     global $length_to_meter;
-    $from_unit = str_replace( 'square ', '', $from_unit );
+    $from_unit = str_replace( 'square_', '', $from_unit );
     if( array_key_exists( $from_unit, $length_to_meter ) ) {
         return $value * pow( $length_to_meter[ $from_unit ], 2 );
     } else {
@@ -241,7 +239,7 @@ function x_to_sq_meters( $value, $from_unit ) {
 
 function x_from_sq_meters( $value, $to_unit ) {
     global $length_to_meter;
-    $to_unit = str_replace( 'square ', '', $to_unit );
+    $to_unit = str_replace( 'square_', '', $to_unit );
     if( array_key_exists( $to_unit, $length_to_meter ) ) {
         return $value / pow( $length_to_meter[ $to_unit ], 2 );
     } else {
@@ -266,8 +264,10 @@ function convert_area( $value, $from_unit, $to_unit ) {
 $volume_to_liter = array(
     'cubic_inches'          => 0.0163871,
     'cubic_feet'            => 28.3168,
+    'cubic_millimeters'     => 0.000001,
     'cubic_centimeters'     => 0.001,
     'cubic_meters'          => 1000,
+    'cubic_kilometers'      => 1000000000000,
     'imperial_gallons'      => 4.54609,
     'imperial_quarts'       => 1.13652,
     'imperial_pints'        => 0.568261,
@@ -284,6 +284,47 @@ $volume_to_liter = array(
     'us_teaspoons'          => 0.00492892,
     'liters'                => 1,
     'milliliters'           => 0.001,
+    
+    // Additional units
+    // https://en.wikipedia.org/wiki/English_wine_cask_units
+    // https://en.wikipedia.org/wiki/English_brewery_cask_units#Firkin
+    'acre-feet'             => 1233000,
+    'barrels_of_oil'        => 158.987,
+    'beer_barrels'          => 117.348, // 1803 standard
+    'beer_firkins'          => 41.59,   // 1803 standard
+    'beer_hogsheads'        => 249.5,   // 1803 standard
+    'beer_kilderkins'       => 83.18,   // 1803 standard
+    'board_feet'            => 2.35974,
+    'bushels'               => 35.2391,
+    'cords'                 => 3624.56,
+    //'English_tierces'       => ,
+    //'fluid_barrels'         => ,
+    'us_fluid_drams'        => 0.003697,    // update
+    'us_fluid_ounces'       => 0.0295735,   // update
+    'full_kegs'             => 117.348,
+    'us_gills'              => 0.118294,    // update
+    'gross_register_tonnes' => 2831.68,
+    //'half_barrels'          => ,
+    //'hogsheads'             => ,
+    //'imperial_beer_barrels' => ,
+    'imperial_bushels'      => 36.3687,
+    'imperial_dessertspoons'=> 0.011839,
+    'imperial_fluid_drams'  => 0.003552,
+    'imperial_gills'        => 0.142065,
+    'imperial_minims'       => 0.000059,
+    'imperial_pecks'        => 9.09218,
+    'us_minims'             => 0.000062,    // update
+    'us_pecks'              => 8.80977,     // update
+    //'puncheons'             => ,
+    //'quarter_barrels'       => ,
+    'register_tonnes'       => 2831.68,
+    'shots'                 => 0.04436,
+    'jiggers'               => 0.04436,     // update
+    //'sixth_barrels'         => ,
+    'sticks_of_butter'      => 0.118294,
+    //'tierces'               => ,
+    //'wine_firkins'          => ,
+    //'wine_rundlets'         => ,
 );
 
 function x_to_liters( $value, $from_unit ) {
@@ -329,6 +370,30 @@ $mass_to_kilogram = array(
     'kilograms'     => 1,
     'metric_tonnes' => 1000,
     'carats'        => 0.0002,
+    
+    // Additional units
+//    'amu'           => , 
+//    'atomic_mass_units' => , 
+//    'blintzes'          => ,
+//    'butter_firkins'    => ,
+//    'drams'             => ,
+//    'earth_masses'      => ,
+//    'english_stone'     => ,
+//    'farshimmelt_blintzes'  => ,
+//    'funt'                  => ,
+//    'furshlugginer_blintzes'    => ,
+//    'grains'                    => ,
+//    'imperial_tons'             => ,
+//    'jupiter_masses'            => ,
+//    'lunar_masses'              => ,
+//    'micrograms'                => ,
+//    'pennyweights'              => ,
+//    'pood'                      => ,
+//    'slugs'                     => ,
+//    'soap_firkins'              => ,
+//    'solar_masses'              => ,
+//    'troy_drams'                => ,
+//    'troy_ounces'               => ,
 );
 
 function x_to_kilograms( $value, $from_unit ) {
