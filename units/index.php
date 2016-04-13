@@ -84,9 +84,11 @@ $full_convert_options = array(
     'volume',
 );
 
-$convert_this = '';
+$convert_this = 'length_and_distance';
 $convert_string = '';
 $list_choice = 'default';
+$show_str_input = '';
+$show_all_units = '';
 
 // Set defaults
 $from_value = '';
@@ -99,9 +101,11 @@ $to_value = '';
 if( isset( $_POST[ 'submit' ] ) ) {
     
     $list_choice = $_POST[ 'remember_options' ];
+    $show_str_input = isset( $_POST[ 'show_str_input' ] ) ? ' checked' : '';
+    $show_all_units = isset( $_POST[ 'show_all_units' ] ) ? ' checked' : '';
     
     //$convert_this = optionize( $_POST[ 'conversion_type' ] );
-    $convert_this = $_POST[ 'conversion_type' ];
+    $convert_this = $_POST[ 'conversion_type' ][0];
     $convert_string = $_POST[ 'convert_string' ];
     $from_value = $_POST[ 'from_value' ];
     
@@ -211,11 +215,11 @@ if( isset( $_POST[ 'submit' ] ) ) {
             <input type="hidden" id="remember_options" value="<?= $list_choice; ?>" name="remember_options">
             
             <div id="show-input-option" class="convert-list-options no-border">
-                <input type="checkbox" id="show_str_input">Show input field
+                <input type="checkbox" name="show_str_input" id="show_str_input" <?= $show_str_input; ?>>Show input field
             </div>
             
             <div id="conversion-type">
-                <input type="text" id="convert_string" name="convert_string" value="<?= $convert_string; ?>" placeholder="Format: X units to units">
+                <input type="text" id="convert_string" name="convert_string" value="<?= $convert_string; ?>" placeholder="Format: X [units] to [units]">
                 <select name="conversion_type[]">
                     
                     <?php
@@ -244,6 +248,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
                     ?>
                     
                 </select>
+                <input type="hidden" id="selected_list" value="<?= $convert_this; ?>">
             </div><!-- END #converions-type -->
             
             <div id="conversion-units">
@@ -285,7 +290,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
             </div><!-- END #conversion-units -->
             
             <div class="convert-list-options no-border">
-                <input id="full_options" type="checkbox">Show ALL units
+                <input id="full_options" name="show_all_units" type="checkbox" <?= $show_all_units; ?>>Show ALL units
             </div>
             
             <div class="convert-list-options no-border right">

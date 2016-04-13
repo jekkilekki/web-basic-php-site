@@ -303,6 +303,7 @@ document.getElementById( 'show_str_input' ).onchange = function( e ) {
 
 var fromSelected = document.getElementById( 'from-units' ).value;
 var toSelected = document.getElementById( 'to-units' ).value;
+var listSelected = document.getElementById( 'selected_list' ).value;
 
 // function assigned to onchange event of unit select boxes
 document.forms[ 'conversion-form' ].elements[ 'from_unit[]' ].onchange = function( e ) {
@@ -337,8 +338,12 @@ window.onload = function() { // immediate function to avoid globals
     
     var listName = document.getElementById( 'remember_options' ).value;
     
+    if( document.getElementById( 'show_str_input' ).checked ) {
+        document.getElementById( 'convert_string' ).style.display = 'block';
+    }
+    
     // Load the Basic Conversion Types List
-    appendListOptions( sel, Conversion_List_Choices[ 'conversion_type[]' ][ listName ] );
+    appendListOptions( sel, Conversion_List_Choices[ 'conversion_type[]' ][ listName ], listSelected );
     
     reloadSelectOptions();
     

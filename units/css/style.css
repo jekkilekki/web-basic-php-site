@@ -35,6 +35,7 @@ main {
 }
 #show-input-option {
     display: inline;
+/*    color: silver;*/
 }
 .convert-list-options {
     display: inline;
