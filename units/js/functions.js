@@ -18,10 +18,12 @@ var Conversion_Unit_Lists = {
             text: [ 'Algerian dinars', 'Argentine pesos', 'Australian cents', 'Australian dollars', 'Bahrain dinars', 'Bolivian bolivianos', 'Botswana pula', 'Brazil reais', 'British pounds', 'Brunei dollars', 'Bulgarian levs', 'Canadian cents', 'Canadian dollars', 'Cayman Islands dollars', 'Chilean pesos', 'Chinese yuan', 'Colombian pesos', 'Costa Rican colones', 'Croatian kuna', 'Czech koruna', 'Danish kroner', 'Dominican pesos', 'Egyptian pounds', 'Estonian kroons', 'Eurocents', 'Euros', 'Fiji dollars', 'Honduran lempiras', 'Hong Kong dollars', 'Hungarian forints', 'Indian rupees', 'Indonesian rupiahs', 'Israeli shekels', 'Jamaican dollars', 'Japanese yen', 'Jordanian dinars', 'Kazakh tenge', 'Kenyan shillings', 'Kuwaiti dinars', 'Latvian lats', 'Lebanese pounds', 'Lithuanian litas', 'Macedonian denari', 'Malaysian ringgits', 'Mauritian rupees', 'Mexican pesos', 'Moldovan leu', 'Moroccan dirhams', 'Namibian dollars', 'Nepalese rupees', 'Netherlands Antilles guilders', 'New Zealand dollars', 'Nicaraguan cordobas', 'Nigerian naira', 'Norwegian kroner', 'Omani rials', 'Pakistan rupees', 'Papua New Guinean kina', 'Paraguayan guaranies', 'Peruvian nuevos soles', 'Philippine pesos', 'Polish zloty', 'Qatar riyals', 'Romanian lei', 'Russian rubles', 'Salvadoran colones', 'Saudi riyals', 'Seychelles rupees', 'Sierra Leonean leones', 'Singapore dollars', 'Slovak koruna', 'South African rands', 'South Korean won', 'Sri Lankan rupees', 'Swedish kronor', 'Swiss francs', 'Taiwan dollars', 'Tanzanian shillings', 'Thai baht', 'Trinidad dollars', 'Tunisian dinar', 'Turkish liras', 'Ugandan shillings', 'Ukrainian grivnas', 'United Arab Emirates dirhams', 'Uruguayan pesos', 'U.S. cents', 'U.S. dollars', 'Uzbekistani sum', 'Venezuelan bolivares fuertes', 'Venezuelan bolivars', 'Vietnamese dong', 'Yemeni rials', 'Zambia kwacha' ],
         },
         data_transfer_rate: {
-            text: [ 'bits per second (bps)', 'bytes per second (Bps)' ],
+            text: [ 'bits per second (bps)', 'nibbles per second (nps)', 'bytes per second (Bps)', 'kilobytes per second (KB/s)', 'megabytes per second (MB/s)', 'gigabytes per second (GB/s)', 'terabytes per second (TB/s)', 'petabytes per second (PB/s)', 'bytes per hour (Bph)', 'kilobytes per hour (KB/h)', 'megabytes per hour (MB/h)', 'gigabytes per hour (GB/h)', 'terabytes per hour (TB/h)', 'petabytes per hour (PB/h)', ],
+            default: [ 'bits per second (bps)', 'bytes per second (Bps)', 'kilobytes per second (KB/s)', 'megabytes per second (MB/s)', 'gigabytes per second (GB/s)', ],
         },
-        digital_storage_size: {
-            text: [ 'bits', 'nybbles', 'bytes', 'metric kilobytes (kB)', 'metric megabytes (MB)', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
+        digital_storage: {
+            text: [ 'bits', 'nibbles', 'bytes', 'kilobytes', 'megabytes', 'gigabytes', 'terabytes', 'petabytes', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
+            default: [ 'bits', 'bytes', 'kilobytes', 'megabytes', 'gigabytes', 'terabytes', 'petabytes', ],
         },
         electric_capacitance: {
             text: [ 'farads' ],
@@ -36,7 +38,8 @@ var Conversion_Unit_Lists = {
             text: [ 'amperes', 'biots' ],
         },
         energy: {
-            text: [ 'barrels of oil equivalent', 'British thermal units', 'calories', 'electron volts', 'ergs', 'foot-pounds', 'grams of TNT', 'joules', 'kilocalories', 'kilograms of TNT', 'megatons of TNT', 'megawatt hours', 'therms', 'tons of TNT', 'watt hours' ],
+            text: [ 'barrels of oil equivalent', 'British thermal units', 'calories', 'electron volts', 'ergs', 'foot-pounds', 'grams of TNT', 'joules', 'kilocalories', 'kilograms of TNT', 'megatons of TNT', 'megawatt hours', 'tons of TNT', 'US therms', 'watt hours' ],
+            default: [ 'joules', 'kilojoules', 'calories', 'kilocalories', 'watt hours', 'kilowatt hours', 'megawatt hours', 'British thermal units', 'US therms', 'foot-pounds' ],
         },
         flow_rate: {
             text: [ 'cubic feet per minute', 'cubic feet per second', 'liters per minute', 'liters per second' ],
@@ -119,10 +122,12 @@ var Conversion_Unit_Lists = {
             text: [ 'Algerian dinars', 'Argentine pesos', 'Australian cents', 'Australian dollars', 'Bahrain dinars', 'Bolivian bolivianos', 'Botswana pula', 'Brazil reais', 'British pounds', 'Brunei dollars', 'Bulgarian levs', 'Canadian cents', 'Canadian dollars', 'Cayman Islands dollars', 'Chilean pesos', 'Chinese yuan', 'Colombian pesos', 'Costa Rican colones', 'Croatian kuna', 'Czech koruna', 'Danish kroner', 'Dominican pesos', 'Egyptian pounds', 'Estonian kroons', 'Eurocents', 'Euros', 'Fiji dollars', 'Honduran lempiras', 'Hong Kong dollars', 'Hungarian forints', 'Indian rupees', 'Indonesian rupiahs', 'Israeli shekels', 'Jamaican dollars', 'Japanese yen', 'Jordanian dinars', 'Kazakh tenge', 'Kenyan shillings', 'Kuwaiti dinars', 'Latvian lats', 'Lebanese pounds', 'Lithuanian litas', 'Macedonian denari', 'Malaysian ringgits', 'Mauritian rupees', 'Mexican pesos', 'Moldovan leu', 'Moroccan dirhams', 'Namibian dollars', 'Nepalese rupees', 'Netherlands Antilles guilders', 'New Zealand dollars', 'Nicaraguan cordobas', 'Nigerian naira', 'Norwegian kroner', 'Omani rials', 'Pakistan rupees', 'Papua New Guinean kina', 'Paraguayan guaranies', 'Peruvian nuevos soles', 'Philippine pesos', 'Polish zloty', 'Qatar riyals', 'Romanian lei', 'Russian rubles', 'Salvadoran colones', 'Saudi riyals', 'Seychelles rupees', 'Sierra Leonean leones', 'Singapore dollars', 'Slovak koruna', 'South African rands', 'South Korean won', 'Sri Lankan rupees', 'Swedish kronor', 'Swiss francs', 'Taiwan dollars', 'Tanzanian shillings', 'Thai baht', 'Trinidad dollars', 'Tunisian dinar', 'Turkish liras', 'Ugandan shillings', 'Ukrainian grivnas', 'United Arab Emirates dirhams', 'Uruguayan pesos', 'U.S. cents', 'U.S. dollars', 'Uzbekistani sum', 'Venezuelan bolivares fuertes', 'Venezuelan bolivars', 'Vietnamese dong', 'Yemeni rials', 'Zambia kwacha' ],
         },
         data_transfer_rate: {
-            text: [ 'bits per second (bps)', 'bytes per second (Bps)' ],
+            text: [ 'bits per second (bps)', 'nibbles per second (nps)', 'bytes per second (Bps)', 'kilobytes per second (KB/s)', 'megabytes per second (MB/s)', 'gigabytes per second (GB/s)', 'terabytes per second (TB/s)', 'petabytes per second (PB/s)', 'bytes per hour (Bph)', 'kilobytes per hour (KB/h)', 'megabytes per hour (MB/h)', 'gigabytes per hour (GB/h)', 'terabytes per hour (TB/h)', 'petabytes per hour (PB/h)', ],
+            default: [ 'bits per second (bps)', 'bytes per second (Bps)', 'kilobytes per second (KB/s)', 'megabytes per second (MB/s)', 'gigabytes per second (GB/s)', ],
         },
-        digital_storage_size: {
-            text: [ 'bits', 'nybbles', 'bytes', 'metric kilobytes (kB)', 'metric megabytes (MB)', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
+        digital_storage: {
+            text: [ 'bits', 'nibbles', 'bytes', 'kilobytes', 'megabytes', 'gigabytes', 'terabytes', 'petabytes', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
+            default: [ 'bits', 'bytes', 'kilobytes', 'megabytes', 'gigabytes', 'terabytes', 'petabytes', ],
         },
         electric_capacitance: {
             text: [ 'farads' ],
@@ -137,7 +142,8 @@ var Conversion_Unit_Lists = {
             text: [ 'amperes', 'biots' ],
         },
         energy: {
-            text: [ 'barrels of oil equivalent', 'British thermal units', 'calories', 'electron volts', 'ergs', 'foot-pounds', 'grams of TNT', 'joules', 'kilocalories', 'kilograms of TNT', 'megatons of TNT', 'megawatt hours', 'therms', 'tons of TNT', 'watt hours' ],
+            text: [ 'barrels of oil equivalent', 'British thermal units', 'calories', 'electron volts', 'ergs', 'foot-pounds', 'grams of TNT', 'joules', 'kilocalories', 'kilograms of TNT', 'megatons of TNT', 'megawatt hours', 'tons of TNT', 'US therms', 'watt hours' ],
+            default: [ 'joules', 'kilojoules', 'calories', 'kilocalories', 'watt hours', 'kilowatt hours', 'megawatt hours', 'British thermal units', 'US therms', 'foot-pounds' ],
         },
         flow_rate: {
             text: [ 'cubic feet per minute', 'cubic feet per second', 'liters per minute', 'liters per second' ],
