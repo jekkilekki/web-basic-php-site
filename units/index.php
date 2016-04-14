@@ -288,7 +288,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
             <div id="conversion-units">
                 <div class="entry">
                     <p>From:</p>
-                    <input type="text" name="from_value" value="<?= $from_value; ?>">
+                    <input id="from_value" type="text" name="from_value" value="<?= $from_value; ?>">
                     <select name="from_unit[]">
 
                         <?php
@@ -306,7 +306,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
                 <span id="equal-sign">=</span>
                 <div class="entry">
                     <p>To:</p>
-                    <input type="text" name="to_value" value="<?= float_to_string( $to_value ); ?>">
+                    <input id="to_value" type="text" name="to_value" value="<?= float_to_string( $to_value ); ?>">
                     <select name="to_unit[]">
 
                         <?php

@@ -319,13 +319,13 @@ var listSelected = document.getElementById( 'selected_list' ).value;
 document.forms[ 'conversion-form' ].elements[ 'from_unit[]' ].onchange = function( e ) {
     if( fromSelected != this.selectedIndex ) {
         fromSelected = this.selectedIndex;
-        //alert( fromSelected );
+        resetInputs();
     }
 }
 document.forms[ 'conversion-form' ].elements[ 'to_unit[]' ].onchange = function( e ) {
     if( toSelected != this.selectedIndex ) {
         toSelected = this.selectedIndex;
-        //alert( toSelected );
+        resetInputs();
     }
 }
 
@@ -380,4 +380,14 @@ function reloadSelectOptions() {
     
     appendDataToSelect( fromList, Conversion_Unit_Lists[ fromName ][ obj.value ], fromSelected );
     appendDataToSelect( toList, Conversion_Unit_Lists[ toName ][ obj.value ], toSelected );
+}
+
+function resetInputs( all=false ) {
+    if( all ) {
+        document.getElementById( 'convert_string' ).value = '';
+        document.getElementById( 'from_value' ).value = '';
+        document.getElementById( 'to_value' ).value = '';
+    } else {
+        document.getElementById( 'to_value' ).value = '';
+    }
 }
