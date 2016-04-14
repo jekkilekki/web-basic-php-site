@@ -2,7 +2,7 @@
 // Another excellent conversion chart http://m.convert-me.com/en/convert/length/picaata.html
 
 /**
- * Primary Measures
+ * Default Measures
  *  - Length / distance
  *  - Area
  *  - Volume / capacity
@@ -20,69 +20,9 @@
  *  - Pressure
  *  - Torque
  */
+
 ini_set('display_errors', 1);
 require_once( 'inc/functions-5.5.php' );
-
-$basic_options = array( 
-    'area',
-    'length and distance',
-    'mass and weight',
-    'speed',
-    'temperature',
-    'volume',
-);
-$convert_options = array(
-    'angles',
-    'area',
-    'data transfer rate',
-    'digital storage',
-    'energy',
-    'frequency',
-    'fuel economy',
-    'length and distance',
-    'mass and weight',
-    'pressure',
-    'speed',
-    'temperature',
-    'time',
-    'volume'
-);
-// https://support.google.com/websearch/answer/3284611?hl=en-KR#unitconverter
-$full_convert_options = array(
-    'acceleration',
-    'angles',
-    'area',
-    'currency',
-    'data transfer rate',
-    'density',
-    'digital storage size',
-    'electric capacitance',
-    'electric charge',
-    'electric conductance',
-    'electric current',
-    'energy',
-    'flow rate',
-    'force',
-    'frequency',
-    'fuel economy',
-    'inductance',
-    'length and distance',
-    'light intensity',
-    'magnetic flux',
-    'mass and weight',
-    'misc',
-    'power',
-    'pressure',
-    'radiation dosage',
-    'radioactivity',
-    'speed',
-    'temperature',
-    'time',
-    'torque',
-    'unitless numeric',
-    'voltage',
-    'volume',
-);
 
 $convert_this = 'length_and_distance';
 $convert_string = '';
@@ -188,8 +128,6 @@ if( isset( $_POST[ 'submit' ] ) ) {
             $to_value = 'Unsupported conversion type.';
     }
     
-    // $to_value = convert_area( $from_value, $from_unit, $to_unit );
-    
 }
 ?>
 
@@ -204,26 +142,6 @@ if( isset( $_POST[ 'submit' ] ) ) {
 <body>
     
     <main id="content">
-
-<!--        <h1>Unit Converter</h1>-->
-        
-        <ul id="unit-types">
-<!--            <li><a href="view/length.php">Length and distance</a></li>-->
-<!--            <li><a href="view/area.php">Area</a></li>-->
-<!--            <li><a href="view/volume.php">Volume</a></li>-->
-<!--            <li><a href="view/mass.php">Mass</a></li>-->
-<!--            <li><a href="view/speed.php">Speed</a></li>-->
-<!--            <li><a href="view/temperature.php">Temperature</a></li>-->
-<!--            <li><a href="view/acceleration.php">Acceleration</a></li>-->
-<!--            <li><a href="view/density.php">Density</a></li>-->
-<!--            <li><a href="view/energy.php">Energy</a></li>-->
-<!--            <li><a href="view/force.php">Force</a></li>-->
-<!--            <li><a href="view/frequency.php">Frequency</a></li>-->
-<!--            <li><a href="view/light.php">Light</a></li>-->
-<!--            <li><a href="view/power.php">Power</a></li>-->
-<!--            <li><a href="view/pressure.php">Pressure</a></li>-->
-<!--            <li><a href="view/torque.php">Torque</a></li>-->
-        </ul>
         
         <?php
         /*
@@ -237,6 +155,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
 //        var_dump( $_POST );
 //        echo '</pre>';
         ?>
+        
         <form id="conversion-form" action="" method="POST">
             <h2>Unit Converter</h2>
             
@@ -256,30 +175,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
                 <input type="text" id="convert_string" name="convert_string" value="<?= $convert_string; ?>" placeholder="Format: X [units] to [units]">
                 <select name="conversion_type[]">
                     
-                    <?php
-//                    if( $list_choice == 'advanced' ) {
-//                        foreach( $full_convert_options as $type ) {
-//                            $opt = optionize( $type );
-//                            echo "<option value='$opt'";
-//                            if( $convert_this == $opt ) { echo " selected"; }
-//                            echo ">" . ucfirst( $type ) . "</option>";
-//                        }
-//                    } elseif( $list_choice == 'default' ) {
-//                        foreach( $convert_options as $type ) {
-//                            $opt = optionize( $type );
-//                            echo "<option value='$opt'";
-//                            if( $convert_this == $opt ) { echo " selected"; }
-//                            echo ">" . ucfirst( $type ) . "</option>";
-//                        }
-//                    } else {
-//                        foreach( $basic_options as $type ) {
-//                            $opt = optionize( $type );
-//                            echo "<option value='$opt'";
-//                            if( $convert_this == $opt ) { echo " selected"; }
-//                            echo ">" . ucfirst( $type ) . "</option>";
-//                        }
-//                    }
-                    ?>
+                    <?php // Select options controlled by 'js/list-choice.js' ?>
                     
                 </select>
                 <input type="hidden" id="selected_list" value="<?= $convert_this; ?>">
@@ -291,14 +187,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
                     <input id="from_value" type="text" name="from_value" value="<?= $from_value; ?>">
                     <select name="from_unit[]">
 
-                        <?php
-//                        foreach( $area_options as $unit ) {
-//                            $opt = optionize( $unit );
-//                            echo "<option value='$opt'";
-//                            if( $from_unit == $opt ) { echo " selected"; }
-//                            echo ">$unit</option>";
-//                        }
-                        ?>
+                        <?php // Select options controlled by 'js/functions.js' ?>
 
                     </select>
                     <input type="hidden" id="from-units" value="<?= $from_unit_str; ?>">
@@ -309,14 +198,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
                     <input id="to_value" type="text" name="to_value" value="<?= float_to_string( $to_value ); ?>">
                     <select name="to_unit[]">
 
-                        <?php
-//                        foreach( $area_options as $unit ) {
-//                            $opt = optionize( $unit );
-//                            echo "<option value='$opt'";
-//                            if( $from_unit == $opt ) { echo " selected"; }
-//                            echo ">$unit</option>";
-//                        }
-                        ?>
+                        <?php // Select options controlled by 'js/functions.js' ?>
 
                     </select>
                     <input type="hidden" id="to-units" value="<?= $to_unit_str; ?>">
