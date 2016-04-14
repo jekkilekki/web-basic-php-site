@@ -1,4 +1,5 @@
 /*
+ * @link: https://en.wikipedia.org/wiki/Conversion_of_units#Torque_or_moment_of_force (BEST)
  * @link: http://www.dyn-web.com/tutorials/forms/select/paired.php
  */
 // object literal holding data for option elements
@@ -7,6 +8,9 @@ var Conversion_Unit_Lists = {
     'from_unit[]': {   // name of associated select box
         
         // names match option values in controlling select box
+        acceleration: {
+            text: [ 'meters per square second', 'millimeters per square second', 'centimeters per square second', 'inches per square second', 'feet per square second', 'yards per square second', 'miles per square second', 'kilometers per square second', 'Gravity', 'galileos' ],
+        },
         angles: {
             text: [ 'arc minutes', 'arc seconds', 'degrees', 'radians', 'revolutions', 'turns' ],
         },
@@ -20,6 +24,9 @@ var Conversion_Unit_Lists = {
         data_transfer_rate: {
             text: [ 'bits per second (bps)', 'nibbles per second (nps)', 'bytes per second (Bps)', 'kilobytes per second (KB/s)', 'megabytes per second (MB/s)', 'gigabytes per second (GB/s)', 'terabytes per second (TB/s)', 'petabytes per second (PB/s)', 'bytes per hour (Bph)', 'kilobytes per hour (KB/h)', 'megabytes per hour (MB/h)', 'gigabytes per hour (GB/h)', 'terabytes per hour (TB/h)', 'petabytes per hour (PB/h)', ],
             default: [ 'bits per second (bps)', 'bytes per second (Bps)', 'kilobytes per second (KB/s)', 'megabytes per second (MB/s)', 'gigabytes per second (GB/s)', ],
+        },
+        density: {
+            text: [ 'kilograms per cubic meter', 'kilograms per liter', 'grams per milliliter', 'metric tonnes per cubic meter', ],  
         },
         digital_storage: {
             text: [ 'bits', 'nibbles', 'bytes', 'kilobytes', 'megabytes', 'gigabytes', 'terabytes', 'petabytes', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
@@ -97,6 +104,9 @@ var Conversion_Unit_Lists = {
             text: [ 'nanoseconds', 'microseconds', 'milliseconds', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years', 'decades', 'centuries', 'fortnights', 'halakim', 'helek', 'leap years', 'lunar cycles', 'lustrum', 'millennium', 'sidereal days', 'sidereal years', ],
             default: [ 'nanoseconds', 'microseconds', 'milliseconds', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years', 'decades', 'centuries' ],
         },
+        torque: {
+            text: [ 'foot-pound force', 'foot-poundal', 'inch-pound force', 'meter kilogram-force', 'Newton meter' ],  
+        },
         unitless_numeric: {
             text: [ 'baker\'s dozens', 'dozens', 'googols', 'great gross', 'gross', 'percent', 'scores' ],
         },
@@ -113,6 +123,9 @@ var Conversion_Unit_Lists = {
     'to_unit[]': {   // name of associated select box
         
         // names match option values in controlling select box
+        acceleration: {
+            text: [ 'meters per square second', 'millimeters per square second', 'centimeters per square second', 'inches per square second', 'feet per square second', 'yards per square second', 'miles per square second', 'kilometers per square second', 'Gravity', 'galileos' ],
+        },
         angles: {
             text: [ 'arc minutes', 'arc seconds', 'degrees', 'radians', 'revolutions', 'turns' ],
         },
@@ -126,6 +139,9 @@ var Conversion_Unit_Lists = {
         data_transfer_rate: {
             text: [ 'bits per second (bps)', 'nibbles per second (nps)', 'bytes per second (Bps)', 'kilobytes per second (KB/s)', 'megabytes per second (MB/s)', 'gigabytes per second (GB/s)', 'terabytes per second (TB/s)', 'petabytes per second (PB/s)', 'bytes per hour (Bph)', 'kilobytes per hour (KB/h)', 'megabytes per hour (MB/h)', 'gigabytes per hour (GB/h)', 'terabytes per hour (TB/h)', 'petabytes per hour (PB/h)', ],
             default: [ 'bits per second (bps)', 'bytes per second (Bps)', 'kilobytes per second (KB/s)', 'megabytes per second (MB/s)', 'gigabytes per second (GB/s)', ],
+        },
+        density: { // https://en.wikipedia.org/wiki/Density
+            text: [ 'kilograms per cubic meter', 'kilograms per liter', 'grams per milliliter', 'metric tonnes per cubic meter', ],  
         },
         digital_storage: {
             text: [ 'bits', 'nibbles', 'bytes', 'kilobytes', 'megabytes', 'gigabytes', 'terabytes', 'petabytes', 'binary kibibytes (KiB)', 'binary mebibytes (MiB)' ],
@@ -202,6 +218,9 @@ var Conversion_Unit_Lists = {
         time: {
             text: [ 'nanoseconds', 'microseconds', 'milliseconds', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years', 'decades', 'centuries', 'fortnights', 'halakim', 'helek', 'leap years', 'lunar cycles', 'lustrum', 'millennium', 'sidereal days', 'sidereal years', ],
             default: [ 'nanoseconds', 'microseconds', 'milliseconds', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years', 'decades', 'centuries' ],
+        },
+        torque: {
+            text: [ 'foot-pound force', 'foot-poundal', 'inch-pound force', 'meter kilogram-force', 'Newton meter' ],  
         },
         unitless_numeric: {
             text: [ 'baker\'s dozens', 'dozens', 'googols', 'great gross', 'gross', 'percent', 'scores' ],

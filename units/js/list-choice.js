@@ -13,7 +13,7 @@ var Conversion_List_Choices = {
             text: [ 'angles', 'area', 'data_transfer_rate', 'digital_storage', 'energy', 'frequency', 'fuel_economy', 'length_and_distance', 'mass_and_weight', 'pressure', 'speed', 'temperature', 'time', 'volume' ],
         },
         advanced: {
-            text: [ 'acceleration', 'angles', 'area', 'currency', 'data_transfer_rate', 'density', 'digital_storage_size', 'electric_capacitance', 'electric_charge', 'electric_conductance', 'electric_current', 'energy', 'flow_rate', 'force', 'frequency', 'fuel_economy', 'inductance', 'length_and_distance', 'light_intensity', 'magnetic_flux', 'mass_and_weight', 'misc', 'power', 'pressure', 'radiation_dosage', 'radioactivity', 'speed', 'temperature', 'time', 'torque', 'unitless_numeric', 'voltage', 'volume' ],
+            text: [ 'acceleration', 'angles', 'area', 'currency', 'data_transfer_rate', 'density', 'digital_storage', 'electric_capacitance', 'electric_charge', 'electric_conductance', 'electric_current', 'energy', 'flow_rate', 'force', 'frequency', 'fuel_economy', 'inductance', 'length_and_distance', 'light_intensity', 'magnetic_flux', 'mass_and_weight', 'misc', 'power', 'pressure', 'radiation_dosage', 'radioactivity', 'speed', 'temperature', 'time', 'torque', 'unitless_numeric', 'voltage', 'volume' ],
         },
         
     }
