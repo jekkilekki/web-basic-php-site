@@ -146,10 +146,10 @@ if( isset( $_POST[ 'submit' ] ) ) {
                                     $to_value = convert_flow( $from_value, $from_unit, $to_unit ); break;
         case 'force':               
                                     $to_value = convert_force( $from_value, $from_unit, $to_unit ); break;
-        case 'frequency':           
+        case 'frequency': include_once( 'inc/formulas/frequency.php' );           
                                     $to_value = convert_frequency( $from_value, $from_unit, $to_unit ); break;
-        case 'fuel_economy':        
-                                    $to_value = convert_fuel( $from_value, $from_unit, $to_unit ); break;
+        case 'fuel_economy': include_once( 'inc/formulas/fuel-economy.php' );       
+                                    $to_value = convert_fuel_economy( $from_value, $from_unit, $to_unit ); break;
         case 'inductance':          
                                     $to_value = convert_inductance( $from_value, $from_unit, $to_unit ); break;
         case 'length_and_distance': include_once( 'inc/formulas/length-area-speed.php' );
@@ -164,7 +164,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
                                     $to_value = convert_misc( $from_value, $from_unit, $to_unit ); break;
         case 'power':               
                                     $to_value = convert_power( $from_value, $from_unit, $to_unit ); break;
-        case 'pressure':            
+        case 'pressure': include_once( 'inc/formulas/pressure.php' );           
                                     $to_value = convert_pressure( $from_value, $from_unit, $to_unit ); break;
         case 'radiation_dosage':    
                                     $to_value = convert_radiation( $from_value, $from_unit, $to_unit ); break;
@@ -174,7 +174,7 @@ if( isset( $_POST[ 'submit' ] ) ) {
                                     $to_value = convert_speed( $from_value, $from_unit, $to_unit ); break;
         case 'temperature': include_once( 'inc/formulas/temperature.php' );        
                                     $to_value = convert_temperature( $from_value, $from_unit, $to_unit ); break;
-        case 'time':                
+        case 'time': include_once( 'inc/formulas/time.php' );               
                                     $to_value = convert_time( $from_value, $from_unit, $to_unit ); break;
         case 'torque':              
                                     $to_value = convert_torque( $from_value, $from_unit, $to_unit ); break;
@@ -248,7 +248,8 @@ if( isset( $_POST[ 'submit' ] ) ) {
             <input type="hidden" id="remember_options" value="<?= $list_choice; ?>" name="remember_options">
             
             <div id="show-input-option" class="convert-list-options no-border">
-                <input type="checkbox" name="show_str_input" id="show_str_input" <?= $show_str_input; ?>>Show input field
+                <input type="checkbox" name="show_str_input" id="show_str_input" <?= $show_str_input; ?>>
+                <label for="show_str_input">Show input field</label>
             </div>
             
             <div id="conversion-type">
@@ -323,7 +324,8 @@ if( isset( $_POST[ 'submit' ] ) ) {
             </div><!-- END #conversion-units -->
             
             <div class="convert-list-options no-border">
-                <input id="full_options" name="show_all_units" type="checkbox" <?= $show_all_units; ?>>Show ALL units
+                <input id="show_all_units" name="show_all_units" type="checkbox" <?= $show_all_units; ?>>
+                <label for="show_all_units">Show ALL units</label>
             </div>
             
             <div class="convert-list-options no-border right">

@@ -48,10 +48,10 @@ var Conversion_Unit_Lists = {
             text: [ 'dynes', 'kilograms-force', 'newtons', 'pounds-force' ],
         },
         frequency: {
-            text: [ 'gigahertz', 'hertz', 'kilohertz', 'megahertz' ],
+            text: [ 'hertz', 'kilohertz', 'megahertz', 'gigahertz', ],
         },
         fuel_economy: {
-            text: [ 'kilometers per liter', 'liters per 100 kilometers', 'miles per gallon' ],
+            text: [ 'kilometers per liter', 'liters per 100 kilometers', 'US miles per gallon', 'Imperial miles per gallon' ],
         },
         inductance: {
             text: [ 'henries' ],
@@ -77,7 +77,8 @@ var Conversion_Unit_Lists = {
             text: [ 'British horsepower', 'donkeypower', 'kilowatts', 'metric horsepower', 'watts' ],
         },
         pressure: {
-            text: [ 'atmospheres', 'barries', 'bars', 'inches of mercury', 'inches of water', 'millibars', 'millimeters of mercury', 'pascals', 'poises', 'pounds per square inch' ],
+            text: [ 'atmospheres', 'barries', 'bars', 'inches of mercury', 'inches of water', 'millibars', 'millimeters of mercury', 'Pascals', 'poises', 'pounds per square inch', 'torrs' ],
+            default: [ 'atmospheres', 'bars', 'Pascals', 'pounds per square inch', 'torrs' ],
         },
         radiation_dosage: {
             text: [ 'grays', 'sieverts', 'rads', 'rems' ],
@@ -93,7 +94,8 @@ var Conversion_Unit_Lists = {
             default: [ 'Celsius', 'Fahrenheit', 'Kelvin' ],
         },
         time: {
-            text: [ 'centuries', 'days', 'decades', 'fortnights', 'halakim', 'hours', 'leap years', 'lunar cycles', 'lustrum', 'millennium', 'minutes', 'months', 'seconds', 'sidereal days', 'sidereal years', 'weeks', 'years' ],
+            text: [ 'nanoseconds', 'microseconds', 'milliseconds', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years', 'decades', 'centuries', 'fortnights', 'halakim', 'helek', 'leap years', 'lunar cycles', 'lustrum', 'millennium', 'sidereal days', 'sidereal years', ],
+            default: [ 'nanoseconds', 'microseconds', 'milliseconds', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years', 'decades', 'centuries' ],
         },
         unitless_numeric: {
             text: [ 'baker\'s dozens', 'dozens', 'googols', 'great gross', 'gross', 'percent', 'scores' ],
@@ -152,10 +154,10 @@ var Conversion_Unit_Lists = {
             text: [ 'dynes', 'kilograms-force', 'newtons', 'pounds-force' ],
         },
         frequency: {
-            text: [ 'gigahertz', 'hertz', 'kilohertz', 'megahertz' ],
+            text: [ 'hertz', 'kilohertz', 'megahertz', 'gigahertz', ],
         },
         fuel_economy: {
-            text: [ 'kilometers per liter', 'liters per 100 kilometers', 'miles per gallon' ],
+            text: [ 'kilometers per liter', 'liters per 100 kilometers', 'US miles per gallon', 'Imperial miles per gallon' ],
         },
         inductance: {
             text: [ 'henries' ],
@@ -181,7 +183,8 @@ var Conversion_Unit_Lists = {
             text: [ 'British horsepower', 'donkeypower', 'kilowatts', 'metric horsepower', 'watts' ],
         },
         pressure: {
-            text: [ 'atmospheres', 'barries', 'bars', 'inches of mercury', 'inches of water', 'millibars', 'millimeters of mercury', 'pascals', 'poises', 'pounds per square inch' ],
+            text: [ 'atmospheres', 'barries', 'bars', 'inches of mercury', 'inches of water', 'millibars', 'millimeters of mercury', 'Pascals', 'poises', 'pounds per square inch', 'torrs' ],
+            default: [ 'atmospheres', 'bars', 'Pascals', 'pounds per square inch', 'torrs' ],
         },
         radiation_dosage: {
             text: [ 'grays', 'sieverts', 'rads', 'rems' ],
@@ -197,7 +200,8 @@ var Conversion_Unit_Lists = {
             default: [ 'Celsius', 'Fahrenheit', 'Kelvin' ],
         },
         time: {
-            text: [ 'centuries', 'days', 'decades', 'fortnights', 'halakim', 'hours', 'leap years', 'lunar cycles', 'lustrum', 'millennium', 'minutes', 'months', 'seconds', 'sidereal days', 'sidereal years', 'weeks', 'years' ],
+            text: [ 'nanoseconds', 'microseconds', 'milliseconds', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years', 'decades', 'centuries', 'fortnights', 'halakim', 'helek', 'leap years', 'lunar cycles', 'lustrum', 'millennium', 'sidereal days', 'sidereal years', ],
+            default: [ 'nanoseconds', 'microseconds', 'milliseconds', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years', 'decades', 'centuries' ],
         },
         unitless_numeric: {
             text: [ 'baker\'s dozens', 'dozens', 'googols', 'great gross', 'gross', 'percent', 'scores' ],
@@ -242,7 +246,7 @@ function appendDataToSelect( sel, obj, str="" ) {
         var f = document.createDocumentFragment();
         var o;
         
-        if( !document.getElementById( 'full_options' ).checked && obj.default ) {
+        if( !document.getElementById( 'show_all_units' ).checked && obj.default ) {
             for( var i=0, len=obj.default.length; i<len; i++ ) {
                 o = document.createElement( 'option' );
                 o.appendChild( document.createTextNode( obj.default[i] ) );
@@ -326,8 +330,8 @@ document.forms[ 'conversion-form' ].elements[ 'to_unit[]' ].onchange = function(
 }
 
 // function to listen for checkbox events (show ALL options)
-document.getElementById( 'full_options' ).onchange = function( e ) {
-    reloadSelectOptions( this );
+document.getElementById( 'show_all_units' ).onchange = function( e ) {
+    reloadSelectOptions();
 }
 
 // anonymous function assigned to onchange event of controlling select box
