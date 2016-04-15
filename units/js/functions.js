@@ -325,8 +325,10 @@ function appendDataToSelect( sel, obj, str="" ) {
 document.getElementById( 'show_str_input' ).onchange = function( e ) {
     if( document.getElementById( 'show_str_input' ).checked ) {
         document.getElementById( 'convert_string' ).style.display = 'block';
+        document.getElementById( 'notes' ).style.display = 'block';
     } else {
         document.getElementById( 'convert_string' ).style.display = 'none';
+        document.getElementById( 'notes' ).style.display = 'none';
     }
 }
 

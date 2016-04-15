@@ -216,6 +216,37 @@ if( isset( $_POST[ 'submit' ] ) ) {
             
         </form><!-- END #converion-form -->
         
+        <div id="notes">
+            <p><strong>Demo only:</strong> the following are not yet fully functional. They are only placeholders that may be implemented sometime in the future.</p>
+            <ol id="notes-list">
+                <li>String input field</li>
+                <li>Advanced dropdown menu
+                    <ul>
+                        <li>Acceleration</li>
+                        <li>Currency</li>
+                        <li>Density</li>
+                        <li>Electric capacitance</li>
+                        <li>Electric charge</li>
+                        <li>Electric conductance</li>
+                        <li>Electric current</li>
+                        <li>Flow rate</li>
+                        <li>Force</li>
+                        <li>Inductance</li>
+                        <li>Light intensity</li>
+                        <li>Magnetic flux</li>
+                        <li>Misc</li>
+                        <li>Power</li>
+                        <li>Pressure</li>
+                        <li>Radiation dosage</li>
+                        <li>Radioactivity</li>
+                        <li>Torque</li>
+                        <li>Unitless numeric</li>
+                        <li>Voltage</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
     </main>
     
     <!-- <script src="js/list.js" type="text/javascript"></script> -->

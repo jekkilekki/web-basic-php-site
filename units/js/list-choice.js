@@ -90,9 +90,16 @@ function changeList( e ) {
     }
     this.className = "convert-list-options active";
     
+    if( !document.getElementById( 'show_str_input' ).checked ) {
+        document.getElementById( 'notes' ).style.display = 'none';
+    }
+    
     if( this.value == 0 ) { document.getElementById( 'remember_options' ).value = 'basic'; }
     else if( this.value == 1 ) { document.getElementById( 'remember_options' ).value = 'default'; }
-    else if( this.value == 2 ) { document.getElementById( 'remember_options' ).value = 'advanced'; }
+    else if( this.value == 2 ) { 
+        document.getElementById( 'remember_options' ).value = 'advanced';
+        document.getElementById( 'notes' ).style.display = 'block';
+    }
     else { document.getElementById( 'remember_options' ).value = 'some_error'; }   
     
     var sel = document.forms[ 'conversion-form' ].elements[ 'conversion_type[]' ];
